@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" href="favicon-32x32.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="description" content="Learn how to brew YES Coffee at home — Pour Over, French Press, AeroPress, and Espresso, with simple ratios and tips for a better cup.">
-<link rel="canonical" href="https://www.thailandyescoffee.com/brew-guide">
+<link rel="canonical" href="https://www.yescoffee.co/brew-guides">
 <title>Brew Guides — YES Coffee</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 <style>
@@ -124,6 +124,40 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 @media(prefers-reduced-motion:reduce){
   *{animation-duration:0.01ms!important;animation-delay:0ms!important;transition:none!important;}
 }
+</style>
+<style id="site-ui-additions">
+/* ── MOBILE HAMBURGER + LANGUAGE + SCROLL-TO-TOP (added; existing nav/header untouched) ── */
+.site-ui-hamburger{display:none;position:fixed;top:20px;right:24px;z-index:200;width:40px;height:40px;background:none;border:none;cursor:pointer;padding:0;align-items:center;justify-content:center;}
+.site-ui-hamburger span{display:block;width:22px;height:1.5px;background:var(--ink,#2C2C2A);margin:3px 0;transition:transform 0.25s ease,opacity 0.25s ease;}
+.site-ui-hamburger.open span:nth-child(1){transform:translateY(4.5px) rotate(45deg);}
+.site-ui-hamburger.open span:nth-child(2){opacity:0;}
+.site-ui-hamburger.open span:nth-child(3){transform:translateY(-4.5px) rotate(-45deg);}
+
+.site-ui-drawer{position:fixed;top:0;left:auto;right:0;bottom:0;margin:0;width:78%;max-width:320px;background:var(--bg,#F7F4EF);z-index:199;display:block;transform:translateX(100%);transition:transform 0.3s ease;box-shadow:-8px 0 24px rgba(0,0,0,0.08);padding:96px 32px 40px;overflow-y:auto;}
+.site-ui-drawer.open{transform:translateX(0);}
+.site-ui-drawer-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.25);z-index:198;opacity:0;pointer-events:none;transition:opacity 0.3s ease;}
+.site-ui-drawer-overlay.open{opacity:1;pointer-events:auto;}
+.site-ui-drawer-links{list-style:none;padding:0;margin:0 0 40px;}
+.site-ui-drawer-links li{margin-bottom:24px;}
+.site-ui-drawer-links a{text-decoration:none;color:var(--ink,#2C2C2A);font-size:15px;letter-spacing:0.08em;text-transform:uppercase;font-weight:300;}
+.site-ui-drawer-lang-label{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted,#6B6862);margin-bottom:14px;}
+.site-ui-lang-group{display:flex;flex-wrap:wrap;gap:10px;}
+.site-ui-lang-btn{border:1px solid var(--rule,rgba(44,44,42,0.22));background:none;color:var(--ink,#2C2C2A);font-size:12px;letter-spacing:0.05em;padding:6px 12px;cursor:pointer;font-family:inherit;}
+.site-ui-lang-btn.active{background:var(--ink,#2C2C2A);color:var(--bg,#F7F4EF);border-color:var(--ink,#2C2C2A);}
+
+.site-ui-lang-desktop{display:flex;gap:8px;position:fixed;top:34px;right:64px;z-index:150;}
+.site-ui-lang-desktop .site-ui-lang-btn{padding:4px 8px;font-size:11px;}
+
+.site-ui-scrolltop{position:fixed;bottom:28px;right:24px;z-index:150;width:44px;height:44px;border-radius:50%;background:var(--bg,#F7F4EF);border:1px solid var(--rule,rgba(44,44,42,0.22));color:var(--ink,#2C2C2A);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transform:translateY(8px);transition:opacity 0.25s ease,transform 0.25s ease;}
+.site-ui-scrolltop.visible{opacity:1;pointer-events:auto;transform:translateY(0);}
+
+@media(max-width:768px){
+  .site-ui-hamburger{display:flex;}
+  .site-ui-lang-desktop{display:none;}
+}
+</style>
+<style id="company-info-style">
+.company-info-row{border-top:0.5px solid var(--rule);padding-top:48px;}
 </style>
 </head>
 <body>
@@ -324,6 +358,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
       <a href="https://dreamcanvas.asia" class="footer-link" target="_blank" rel="noopener">Visit Dream Canvas <span>&#8594;</span></a>
     </div>
   </div>
+  <div class="footer-inner company-info-row">
+  <div class="footer-col">
+    <p class="footer-heading">Company Information</p>
+    <p class="footer-text">YES COFFEE (THAILAND) CO., LTD.<br><span class="company-info-i18n">Retail &amp; Caf&eacute; Operations</span></p>
+    <p class="footer-text"><span class="company-info-i18n">Business Registration No.</span> 0835555008620</p>
+    <p class="footer-text" style="margin-top:8px;"><span class="company-info-i18n">Coffee Roasted by</span><br>GENNIS BEAN CO., LTD.<br><span class="company-info-i18n">Roasting &amp; Coffee Production</span></p>
+    <p class="footer-text"><span class="company-info-i18n">Business Registration No.</span> 0835555003024</p>
+  </div>
+</div>
   <div class="footer-legal">
     <p>&copy; 2026 YES Coffee. All rights reserved.</p>
     <div class="footer-legal-links">
@@ -333,5 +376,2189 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
   </div>
 </footer>
 
+<!-- SITE UI ADDITIONS: mobile hamburger menu, language selector, scroll-to-top (new, self-contained; does not modify existing header/nav) -->
+<button type="button" class="site-ui-hamburger" id="siteUiHamburger" aria-label="Open menu" aria-expanded="false">
+  <span></span><span></span><span></span>
+</button>
+
+<div class="site-ui-lang-desktop" id="siteUiLangDesktop">
+  <button type="button" class="site-ui-lang-btn active" data-lang="EN">EN</button>
+  <button type="button" class="site-ui-lang-btn" data-lang="KO">KO</button>
+  <button type="button" class="site-ui-lang-btn" data-lang="ZH">中文</button>
+  <button type="button" class="site-ui-lang-btn" data-lang="RU">RU</button>
+  <button type="button" class="site-ui-lang-btn" data-lang="TH">TH</button>
+</div>
+
+<div class="site-ui-drawer-overlay" id="siteUiDrawerOverlay"></div>
+<nav class="site-ui-drawer" id="siteUiDrawer" aria-label="Mobile navigation">
+  <ul class="site-ui-drawer-links">
+    <li><a href="collection.html">Coffee</a></li>
+    <li><a href="story.html">Story</a></li>
+    <li><a href="brew-guide.html">Brew Guides</a></li>
+    <li><a href="story.html#visit-us">Find Us</a></li>
+  </ul>
+  <div class="site-ui-drawer-lang-label">Language</div>
+  <div class="site-ui-lang-group" id="siteUiLangMobile">
+    <button type="button" class="site-ui-lang-btn active" data-lang="EN">EN</button>
+    <button type="button" class="site-ui-lang-btn" data-lang="KO">KO</button>
+    <button type="button" class="site-ui-lang-btn" data-lang="ZH">中文</button>
+    <button type="button" class="site-ui-lang-btn" data-lang="RU">RU</button>
+    <button type="button" class="site-ui-lang-btn" data-lang="TH">TH</button>
+  </div>
+</nav>
+
+<button type="button" class="site-ui-scrolltop" id="siteUiScrollTop" aria-label="Scroll to top">↑</button>
+
+<script id="site-ui-additions-script">
+(function(){
+  var hamburger = document.getElementById('siteUiHamburger');
+  var drawer = document.getElementById('siteUiDrawer');
+  var overlay = document.getElementById('siteUiDrawerOverlay');
+  var scrollTopBtn = document.getElementById('siteUiScrollTop');
+
+  function openDrawer(){
+    drawer.classList.add('open');
+    overlay.classList.add('open');
+    hamburger.classList.add('open');
+    hamburger.setAttribute('aria-expanded','true');
+  }
+  function closeDrawer(){
+    drawer.classList.remove('open');
+    overlay.classList.remove('open');
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded','false');
+  }
+  if(hamburger){
+    hamburger.addEventListener('click', function(){
+      if(drawer.classList.contains('open')){ closeDrawer(); } else { openDrawer(); }
+    });
+  }
+  if(overlay){ overlay.addEventListener('click', closeDrawer); }
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && drawer.classList.contains('open')){ closeDrawer(); }
+  });
+
+  var langButtons = document.querySelectorAll('.site-ui-lang-btn');
+  langButtons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var lang = btn.getAttribute('data-lang');
+      document.querySelectorAll('.site-ui-lang-btn').forEach(function(b){ b.classList.remove('active'); });
+      document.querySelectorAll('.site-ui-lang-btn[data-lang="' + lang + '"]').forEach(function(b){ b.classList.add('active'); });
+    });
+  });
+
+  if(scrollTopBtn){
+    window.addEventListener('scroll', function(){
+      if(window.scrollY > 400){ scrollTopBtn.classList.add('visible'); }
+      else { scrollTopBtn.classList.remove('visible'); }
+    });
+    scrollTopBtn.addEventListener('click', function(){
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+})();
+</script>
+<script id="site-ui-i18n">
+var YC_I18N = {
+  "Coffee": {
+    "ko": "커피",
+    "zh": "咖啡",
+    "ru": "Кофе",
+    "th": "กาแฟ"
+  },
+  "Story": {
+    "ko": "스토리",
+    "zh": "品牌故事",
+    "ru": "История",
+    "th": "เรื่องราว"
+  },
+  "Brew Guides": {
+    "ko": "브루 가이드",
+    "zh": "冲煮指南",
+    "ru": "Гайды по завариванию",
+    "th": "คู่มือการชง"
+  },
+  "Find Us": {
+    "ko": "오시는 길",
+    "zh": "店铺位置",
+    "ru": "Как нас найти",
+    "th": "แผนที่ร้าน"
+  },
+  "Language": {
+    "ko": "언어",
+    "zh": "语言",
+    "ru": "Язык",
+    "th": "ภาษา"
+  },
+  "Open menu": {
+    "ko": "메뉴 열기",
+    "zh": "打开菜单",
+    "ru": "Открыть меню",
+    "th": "เปิดเมนู"
+  },
+  "Scroll to top": {
+    "ko": "맨 위로 이동",
+    "zh": "返回顶部",
+    "ru": "Наверх",
+    "th": "เลื่อนขึ้นด้านบน"
+  },
+  "From Northern Thailand &bull; With Care": {
+    "ko": "태국 북부에서, 정성을 담아",
+    "zh": "来自泰国北部 · 用心烘焙",
+    "ru": "Из Северного Таиланда — с заботой",
+    "th": "จากภาคเหนือของไทย ด้วยความใส่ใจ"
+  },
+  "__hero_headline_html__": {
+    "ko": "매일의<br><em>순간</em>을<br>채우는 커피.",
+    "zh": "为日常<br><em>时刻</em><br>而生的咖啡。",
+    "ru": "Кофе для<br><em>повседневных</em><br>моментов.",
+    "th": "กาแฟเพื่อ<br><em>ทุกช่วงเวลา</em><br>ในแต่ละวัน"
+  },
+  "__hero_body_html__": {
+    "ko": "태국 북부에서 정성껏 소싱하여,<br>매일의 순간을 위해 정성스럽게 로스팅했습니다.",
+    "zh": "精选来自泰国北部的咖啡豆，<br>用心烘焙，只为日常的美好时刻。",
+    "ru": "Тщательно отобрано в Северном Таиланде.<br>Обжарено с заботой для повседневных моментов.",
+    "th": "คัดสรรอย่างพิถีพิถันจากภาคเหนือของไทย<br>คั่วด้วยใจใส่ใจในทุกช่วงเวลาของวัน"
+  },
+  "Discover Coffees &#8594;": {
+    "ko": "커피 둘러보기 →",
+    "zh": "探索咖啡 →",
+    "ru": "Смотреть кофе →",
+    "th": "สำรวจกาแฟ →"
+  },
+  "Contact Information": {
+    "ko": "연락처 정보",
+    "zh": "联系信息",
+    "ru": "Контактная информация",
+    "th": "ข้อมูลติดต่อ"
+  },
+  "Full Name *": {
+    "ko": "성명 *",
+    "zh": "姓名 *",
+    "ru": "Полное имя *",
+    "th": "ชื่อ-นามสกุล *"
+  },
+  "Email Address *": {
+    "ko": "이메일 주소 *",
+    "zh": "电子邮箱 *",
+    "ru": "Электронная почта *",
+    "th": "อีเมล *"
+  },
+  "Phone / WhatsApp (Optional)": {
+    "ko": "전화번호 / WhatsApp (선택)",
+    "zh": "电话 / WhatsApp（选填）",
+    "ru": "Телефон / WhatsApp (необязательно)",
+    "th": "เบอร์โทร / WhatsApp (ไม่บังคับ)"
+  },
+  "Shipping Address": {
+    "ko": "배송 주소",
+    "zh": "收货地址",
+    "ru": "Адрес доставки",
+    "th": "ที่อยู่จัดส่ง"
+  },
+  "Country *": {
+    "ko": "국가 *",
+    "zh": "国家 *",
+    "ru": "Страна *",
+    "th": "ประเทศ *"
+  },
+  "Postal Code *": {
+    "ko": "우편번호 *",
+    "zh": "邮政编码 *",
+    "ru": "Почтовый индекс *",
+    "th": "รหัสไปรษณีย์ *"
+  },
+  "City *": {
+    "ko": "도시 *",
+    "zh": "城市 *",
+    "ru": "Город *",
+    "th": "เมือง *"
+  },
+  "Street Address *": {
+    "ko": "상세 주소 *",
+    "zh": "详细地址 *",
+    "ru": "Улица, дом *",
+    "th": "ที่อยู่ *"
+  },
+  "Order Summary": {
+    "ko": "주문 요약",
+    "zh": "订单摘要",
+    "ru": "Сводка заказа",
+    "th": "สรุปคำสั่งซื้อ"
+  },
+  "Add Another Coffee": {
+    "ko": "다른 커피 추가",
+    "zh": "添加其他咖啡",
+    "ru": "Добавить ещё кофе",
+    "th": "เพิ่มกาแฟรายการอื่น"
+  },
+  "Whole Bean": {
+    "ko": "홀빈(원두 그대로)",
+    "zh": "全豆",
+    "ru": "Целые зёрна",
+    "th": "เมล็ดกาแฟ (ไม่บด)"
+  },
+  "Filter": {
+    "ko": "필터용",
+    "zh": "手冲/滤泡",
+    "ru": "Фильтр",
+    "th": "ดริป/ฟิลเตอร์"
+  },
+  "Espresso": {
+    "ko": "에스프레소",
+    "zh": "意式浓缩",
+    "ru": "Эспрессо",
+    "th": "เอสเพรสโซ"
+  },
+  "French Press": {
+    "ko": "프렌치프레스",
+    "zh": "法压壶",
+    "ru": "Френч-пресс",
+    "th": "เฟรนช์เพรส"
+  },
+  "+ Add to Order": {
+    "ko": "+ 주문에 추가",
+    "zh": "+ 加入订单",
+    "ru": "+ Добавить в заказ",
+    "th": "+ เพิ่มลงในคำสั่งซื้อ"
+  },
+  "Total Quantity": {
+    "ko": "총 수량",
+    "zh": "总数量",
+    "ru": "Общее количество",
+    "th": "จำนวนรวม"
+  },
+  "Total Weight": {
+    "ko": "총 중량",
+    "zh": "总重量",
+    "ru": "Общий вес",
+    "th": "น้ำหนักรวม"
+  },
+  "Product Subtotal": {
+    "ko": "상품 소계",
+    "zh": "商品小计",
+    "ru": "Промежуточная сумма",
+    "th": "ยอดรวมสินค้า"
+  },
+  "Shipping": {
+    "ko": "배송",
+    "zh": "配送",
+    "ru": "Доставка",
+    "th": "การจัดส่ง"
+  },
+  "To be confirmed": {
+    "ko": "추후 안내",
+    "zh": "待确认",
+    "ru": "Уточняется",
+    "th": "รอการยืนยัน"
+  },
+  "Additional Notes": {
+    "ko": "추가 요청사항",
+    "zh": "备注",
+    "ru": "Дополнительные пожелания",
+    "th": "หมายเหตุเพิ่มเติม"
+  },
+  "Send Order Request": {
+    "ko": "주문 요청 보내기",
+    "zh": "提交订单请求",
+    "ru": "Отправить заявку на заказ",
+    "th": "ส่งคำขอสั่งซื้อ"
+  },
+  "What to Expect": {
+    "ko": "진행 순서 안내",
+    "zh": "接下来的流程",
+    "ru": "Что дальше",
+    "th": "ขั้นตอนถัดไป"
+  },
+  "We'll carefully review your order.": {
+    "ko": "주문 내역을 꼼꼼히 확인합니다.",
+    "zh": "我们会仔细核对您的订单。",
+    "ru": "Мы внимательно проверим ваш заказ.",
+    "th": "เราจะตรวจสอบคำสั่งซื้อของคุณอย่างละเอียด"
+  },
+  "We'll confirm your order details and shipping cost.": {
+    "ko": "주문 상세 내역과 배송비를 확인해 안내드립니다.",
+    "zh": "我们会确认订单详情与运费。",
+    "ru": "Мы подтвердим детали заказа и стоимость доставки.",
+    "th": "เราจะยืนยันรายละเอียดคำสั่งซื้อและค่าจัดส่งให้คุณ"
+  },
+  "We'll email your payment instructions.": {
+    "ko": "결제 안내를 이메일로 보내드립니다.",
+    "zh": "我们会通过邮件发送付款说明。",
+    "ru": "Мы вышлем инструкции по оплате на почту.",
+    "th": "เราจะส่งขั้นตอนการชำระเงินให้ทางอีเมล"
+  },
+  "For larger orders, coffee may be freshly roasted before shipment.": {
+    "ko": "대량 주문의 경우, 배송 전 신선하게 로스팅해 드릴 수 있습니다.",
+    "zh": "大宗订单可能会在发货前新鲜烘焙。",
+    "ru": "Для крупных заказов кофе может быть обжарен непосредственно перед отправкой.",
+    "th": "สำหรับคำสั่งซื้อจำนวนมาก กาแฟอาจคั่วสดใหม่ก่อนจัดส่ง"
+  },
+  "Thank you.": {
+    "ko": "감사합니다.",
+    "zh": "感谢您。",
+    "ru": "Спасибо.",
+    "th": "ขอบคุณค่ะ/ครับ"
+  },
+  "Your order request has been received successfully.": {
+    "ko": "주문 요청이 정상적으로 접수되었습니다.",
+    "zh": "您的订单请求已成功送出。",
+    "ru": "Ваш заказ успешно получен.",
+    "th": "เราได้รับคำขอสั่งซื้อของคุณเรียบร้อยแล้ว"
+  },
+  "We'll contact you soon with:": {
+    "ko": "곧 아래 내용을 안내해 드리겠습니다:",
+    "zh": "我们将尽快与您联系，告知：",
+    "ru": "Мы скоро свяжемся с вами и сообщим:",
+    "th": "เราจะติดต่อกลับไปเร็ว ๆ นี้พร้อมแจ้ง:"
+  },
+  "Product availability": {
+    "ko": "상품 재고 여부",
+    "zh": "商品库存情况",
+    "ru": "Наличие товара",
+    "th": "สถานะสินค้าคงเหลือ"
+  },
+  "Payment instructions": {
+    "ko": "결제 방법 안내",
+    "zh": "付款说明",
+    "ru": "Инструкции по оплате",
+    "th": "ขั้นตอนการชำระเงิน"
+  },
+  "After payment has been confirmed, your coffee will be freshly roasted and prepared for shipment.": {
+    "ko": "결제가 확인되면, 커피를 신선하게 로스팅하여 배송 준비를 시작합니다.",
+    "zh": "付款确认后，我们将为您新鲜烘焙咖啡并准备发货。",
+    "ru": "После подтверждения оплаты кофе будет свежеобжарен и подготовлен к отправке.",
+    "th": "เมื่อยืนยันการชำระเงินแล้ว เราจะคั่วกาแฟสดใหม่และเตรียมจัดส่งให้คุณ"
+  },
+  "__error_prefix__": {
+    "ko": "주문 전송 중 문제가 발생했습니다. 다시 시도해 주시거나, 아래 주소로 직접 문의해 주세요: ",
+    "zh": "发送订单时出现问题。请重试，或直接发送邮件至：",
+    "ru": "Не удалось отправить заказ. Пожалуйста, попробуйте снова или напишите нам напрямую: ",
+    "th": "เกิดข้อผิดพลาดในการส่งคำสั่งซื้อ กรุณาลองใหม่อีกครั้ง หรืออีเมลถึงเราโดยตรงที่ "
+  },
+  "__error_suffix__": {
+    "ko": ".",
+    "zh": "。",
+    "ru": ".",
+    "th": ""
+  },
+  "Origin": {
+    "ko": "원산지",
+    "zh": "产地",
+    "ru": "Происхождение",
+    "th": "แหล่งที่มา"
+  },
+  "Processing": {
+    "ko": "가공 방식",
+    "zh": "处理法",
+    "ru": "Обработка",
+    "th": "กระบวนการแปรรูป"
+  },
+  "Roast Level": {
+    "ko": "로스팅 정도",
+    "zh": "烘焙度",
+    "ru": "Степень обжарки",
+    "th": "ระดับการคั่ว"
+  },
+  "Best For": {
+    "ko": "추천 용도",
+    "zh": "适合冲煮方式",
+    "ru": "Рекомендуется для",
+    "th": "เหมาะสำหรับ"
+  },
+  "Available Sizes": {
+    "ko": "용량 선택",
+    "zh": "可选规格",
+    "ru": "Доступные объёмы",
+    "th": "ขนาดที่มีจำหน่าย"
+  },
+  "Grind Type": {
+    "ko": "분쇄 방식",
+    "zh": "研磨方式",
+    "ru": "Тип помола",
+    "th": "ประเภทการบด"
+  },
+  "Quantity": {
+    "ko": "수량",
+    "zh": "数量",
+    "ru": "Количество",
+    "th": "จำนวน"
+  },
+  "Ordering & Shipping": {
+    "ko": "주문 및 배송",
+    "zh": "订购与配送",
+    "ru": "Заказ и доставка",
+    "th": "การสั่งซื้อและจัดส่ง"
+  },
+  "Worldwide shipping available.": {
+    "ko": "전 세계 배송이 가능합니다.",
+    "zh": "支持全球配送。",
+    "ru": "Доставка по всему миру.",
+    "th": "จัดส่งได้ทั่วโลก"
+  },
+  "About YES Coffee": {
+    "ko": "YES Coffee 소개",
+    "zh": "关于 YES Coffee",
+    "ru": "О YES Coffee",
+    "th": "เกี่ยวกับ YES Coffee"
+  },
+  "More than coffee.": {
+    "ko": "커피, 그 이상의 이야기.",
+    "zh": "不止是咖啡。",
+    "ru": "Больше, чем просто кофе.",
+    "th": "มากกว่าแค่กาแฟ"
+  },
+  "Coffee has always been about people. Every cup brings together place, care and everyday moments.": {
+    "ko": "커피는 언제나 사람에 관한 것이었습니다. 한 잔의 커피에는 장소와 정성, 그리고 일상의 순간이 함께 담겨 있습니다.",
+    "zh": "咖啡从来都是关于人的故事。每一杯咖啡都凝聚着产地、用心与日常的瞬间。",
+    "ru": "Кофе всегда был про людей. В каждой чашке — место, забота и повседневные моменты.",
+    "th": "กาแฟคือเรื่องราวของผู้คนเสมอมา แต่ละแก้วผสานสถานที่ ความใส่ใจ และช่วงเวลาในชีวิตประจำวันเข้าไว้ด้วยกัน"
+  },
+  "Our Story": {
+    "ko": "우리의 이야기",
+    "zh": "品牌故事",
+    "ru": "Наша история",
+    "th": "เรื่องราวของเรา"
+  },
+  "Coffee has always been about people.": {
+    "ko": "커피는 언제나 사람에 관한 것이었습니다.",
+    "zh": "咖啡从来都是关于人的故事。",
+    "ru": "Кофе всегда был про людей.",
+    "th": "กาแฟคือเรื่องราวของผู้คนเสมอมา"
+  },
+  "For us, coffee has never been only a product. It is a quiet, everyday moment shared between people.": {
+    "ko": "저희에게 커피는 단순한 상품이 아닙니다. 사람과 사람 사이에 오가는 조용한 일상의 순간입니다.",
+    "zh": "对我们而言，咖啡从来不只是商品，而是人与人之间静静分享的日常时刻。",
+    "ru": "Для нас кофе — это не просто продукт. Это тихий, повседневный момент, которым делятся люди.",
+    "th": "สำหรับเรา กาแฟไม่เคยเป็นเพียงสินค้า แต่เป็นช่วงเวลาเงียบ ๆ ในชีวิตประจำวันที่ผู้คนแบ่งปันร่วมกัน"
+  },
+  "That belief led us into the mountains of Northern Thailand, where the land, the climate and the people who tend it shape every cup long before it reaches yours.": {
+    "ko": "그 믿음은 저희를 태국 북부의 산으로 이끌었습니다. 그곳의 땅과 기후, 그리고 이를 가꾸는 사람들이 여러분의 잔에 닿기 훨씬 전부터 한 잔의 커피를 빚어냅니다.",
+    "zh": "正是这份信念，带领我们走进泰国北部的群山。那里的土地、气候，以及悉心照料咖啡的人们，早在咖啡送到您手中之前，就已经塑造了每一杯的风味。",
+    "ru": "Эта вера привела нас в горы Северного Таиланда, где земля, климат и люди, ухаживающие за ней, формируют вкус чашки задолго до того, как она окажется у вас.",
+    "th": "ความเชื่อนั้นนำเราขึ้นสู่ภูเขาทางภาคเหนือของไทย ที่ซึ่งผืนดิน สภาพอากาศ และผู้คนที่ดูแลไร่กาแฟ ต่างมีส่วนหล่อหลอมรสชาติในแก้วของคุณตั้งแต่ก่อนที่กาแฟจะมาถึงมือคุณเสียอีก"
+  },
+  "This is where every cup begins.": {
+    "ko": "모든 한 잔은 바로 이곳에서 시작됩니다.",
+    "zh": "每一杯咖啡，都始于这里。",
+    "ru": "Именно здесь начинается каждая чашка.",
+    "th": "ทุกแก้วเริ่มต้นที่นี่"
+  },
+  "Our Coffee": {
+    "ko": "우리의 커피",
+    "zh": "我们的咖啡",
+    "ru": "Наш кофе",
+    "th": "กาแฟของเรา"
+  },
+  "From Northern Thailand.": {
+    "ko": "태국 북부에서 왔습니다.",
+    "zh": "来自泰国北部。",
+    "ru": "Из Северного Таиланда.",
+    "th": "จากภาคเหนือของไทย"
+  },
+  "High in the mountains of Chiang Rai and Chiang Mai, cooler air and rich soil let coffee cherries ripen slowly, developing a quiet sweetness and balance you can taste in every cup.": {
+    "ko": "치앙라이와 치앙마이의 높은 산지에서는 서늘한 공기와 비옥한 토양 덕분에 커피 체리가 천천히 익어가며, 그 은은한 단맛과 균형이 한 잔 한 잔에 고스란히 담깁니다.",
+    "zh": "在清莱与清迈的高山之上，凉爽的空气与肥沃的土壤让咖啡樱桃缓慢成熟，孕育出每一杯都能品尝到的柔和甜感与均衡风味。",
+    "ru": "Высоко в горах Чианграя и Чиангмая прохладный воздух и плодородная почва позволяют кофейным ягодам созревать медленно, обретая мягкую сладость и баланс, которые чувствуются в каждой чашке.",
+    "th": "บนภูเขาสูงแห่งเชียงรายและเชียงใหม่ อากาศเย็นสบายและดินอันอุดมสมบูรณ์ช่วยให้เชอร์รี่กาแฟสุกช้า ๆ ก่อเกิดความหวานละมุนและความสมดุลที่สัมผัสได้ในทุกแก้ว"
+  },
+  "Each cherry is still picked by hand, one at a time, by farmers who have worked this land for generations — because quality begins long before roasting.": {
+    "ko": "체리는 지금도 이 땅을 여러 세대에 걸쳐 일궈온 농부들의 손으로 한 알 한 알 수확됩니다. 좋은 품질은 로스팅보다 훨씬 전부터 시작되기 때문입니다.",
+    "zh": "每一颗樱桃仍由世代耕耘这片土地的农人一颗颗手工采摘——因为品质早在烘焙之前就已经开始。",
+    "ru": "Каждая ягода по-прежнему собирается вручную, по одной, фермерами, которые обрабатывают эту землю уже много поколений — ведь качество начинается задолго до обжарки.",
+    "th": "เชอร์รี่แต่ละเม็ดยังคงถูกเก็บด้วยมือทีละเม็ดโดยเกษตรกรที่ดูแลผืนดินนี้มาหลายชั่วอายุคน เพราะคุณภาพเริ่มต้นตั้งแต่ก่อนการคั่วเสียอีก"
+  },
+  "Roasting": {
+    "ko": "로스팅",
+    "zh": "烘焙",
+    "ru": "Обжарка",
+    "th": "การคั่ว"
+  },
+  "Roasted with care.": {
+    "ko": "정성을 다해 로스팅합니다.",
+    "zh": "用心烘焙。",
+    "ru": "Обжарено с заботой.",
+    "th": "คั่วด้วยความใส่ใจ"
+  },
+  "We roast in small batches, never far ahead of when it will be brewed, so every batch keeps the true character of where it came from.": {
+    "ko": "저희는 소량씩 로스팅하며, 추출 시점과 멀지 않게 로스팅해 원산지 본연의 개성을 그대로 지켜냅니다.",
+    "zh": "我们采用小批量烘焙，且尽量贴近冲煮的时间，让每一批咖啡都保留原产地真实的风味特质。",
+    "ru": "Мы обжариваем небольшими партиями, незадолго до заваривания, чтобы каждая партия сохраняла подлинный характер своего происхождения.",
+    "th": "เราคั่วกาแฟทีละล็อตเล็ก ๆ ในช่วงเวลาใกล้เคียงกับการชง เพื่อให้กาแฟแต่ละล็อตยังคงเอกลักษณ์ที่แท้จริงของแหล่งที่มาไว้ได้"
+  },
+  "It is a slower way to work, but one that lets each origin's story come through, cup after cup.": {
+    "ko": "조금 더디더라도, 이 방식이야말로 매 잔마다 원산지의 이야기를 온전히 전할 수 있는 길입니다.",
+    "zh": "这是一种更慢的方式，却能让每个产地的故事，透过一杯杯咖啡真实地传递出来。",
+    "ru": "Это более медленный подход к работе, но именно он позволяет истории каждого происхождения раскрываться, чашка за чашкой.",
+    "th": "แม้จะเป็นวิธีที่ช้ากว่า แต่ก็ช่วยให้เรื่องราวของแต่ละแหล่งปลูกถ่ายทอดออกมาได้อย่างแท้จริงในทุกแก้ว"
+  },
+  "Dream Canvas": {
+    "ko": "Dream Canvas",
+    "zh": "Dream Canvas",
+    "ru": "Dream Canvas",
+    "th": "Dream Canvas"
+  },
+  "Beyond coffee.": {
+    "ko": "커피 그 너머까지.",
+    "zh": "咖啡之外。",
+    "ru": "За пределами кофе.",
+    "th": "ไกลกว่าแค่กาแฟ"
+  },
+  "That same care extends beyond the cup. Through Dream Canvas, we support children and communities across Northern Thailand with access to education and opportunity.": {
+    "ko": "그 정성은 한 잔의 커피를 넘어 이어집니다. Dream Canvas를 통해 저희는 태국 북부 각지의 어린이와 지역사회가 교육과 기회에 다가갈 수 있도록 돕고 있습니다.",
+    "zh": "这份用心延伸至咖啡之外。通过 Dream Canvas，我们支持泰国北部各地的儿童与社区，帮助他们获得教育与发展的机会。",
+    "ru": "Эта же забота выходит за пределы чашки. Через Dream Canvas мы поддерживаем детей и сообщества по всему Северному Таиланду, помогая им получить доступ к образованию и возможностям.",
+    "th": "ความใส่ใจนั้นไม่ได้หยุดอยู่แค่ในแก้วกาแฟ ผ่านโครงการ Dream Canvas เราสนับสนุนเด็กและชุมชนทั่วภาคเหนือของไทยให้เข้าถึงการศึกษาและโอกาสต่าง ๆ"
+  },
+  "Because caring for people has always been at the heart of what we do.": {
+    "ko": "사람을 향한 마음이 언제나 저희가 하는 일의 중심에 있기 때문입니다.",
+    "zh": "因为关心他人，始终是我们所做一切的核心。",
+    "ru": "Потому что забота о людях всегда была в основе того, что мы делаем.",
+    "th": "เพราะการดูแลผู้คนคือหัวใจสำคัญของสิ่งที่เราทำมาโดยตลอด"
+  },
+  "Learn More": {
+    "ko": "자세히 보기",
+    "zh": "了解更多",
+    "ru": "Узнать больше",
+    "th": "เรียนรู้เพิ่มเติม"
+  },
+  "Visit Us": {
+    "ko": "오시는 길",
+    "zh": "欢迎光临",
+    "ru": "Посетите нас",
+    "th": "มาเยี่ยมชมเรา"
+  },
+  "Come experience our story in person. We'd love to welcome you.": {
+    "ko": "저희의 이야기를 직접 경험해 보세요. 여러분을 진심으로 기다리고 있습니다.",
+    "zh": "欢迎亲临现场，感受我们的故事。我们期待您的到来。",
+    "ru": "Приходите и почувствуйте нашу историю лично. Будем рады вас видеть.",
+    "th": "มาสัมผัสเรื่องราวของเราด้วยตัวเอง เรายินดีต้อนรับคุณเสมอ"
+  },
+  "Google Maps": {
+    "ko": "Google 지도 보기",
+    "zh": "Google 地图",
+    "ru": "Google Карты",
+    "th": "Google Maps"
+  },
+  "Brew coffee like you mean it.": {
+    "ko": "정성을 다해 커피를 내려보세요.",
+    "zh": "用心冲煮，煮出诚意。",
+    "ru": "Заваривайте кофе осознанно.",
+    "th": "ชงกาแฟอย่างตั้งใจ"
+  },
+  "Four simple methods, honest ratios, and a few small details that make a real difference in the cup.": {
+    "ko": "네 가지 간단한 방법과 정직한 비율, 그리고 맛의 차이를 만드는 작은 디테일들을 소개합니다.",
+    "zh": "四种简单的冲煮方式、诚实的比例，以及那些真正影响风味的小细节。",
+    "ru": "Четыре простых метода, честные пропорции и несколько мелочей, которые реально влияют на вкус чашки.",
+    "th": "สี่วิธีการชงที่เรียบง่าย อัตราส่วนที่ตรงไปตรงมา และรายละเอียดเล็ก ๆ ที่สร้างความแตกต่างให้รสชาติในแก้วอย่างแท้จริง"
+  },
+  "Getting Started": {
+    "ko": "시작하기 전에",
+    "zh": "新手入门",
+    "ru": "С чего начать",
+    "th": "เริ่มต้นใช้งาน"
+  },
+  "Choosing the right brew method.": {
+    "ko": "나에게 맞는 추출 방식 고르기",
+    "zh": "选择合适的冲煮方式。",
+    "ru": "Как выбрать подходящий способ заваривания.",
+    "th": "เลือกวิธีชงที่ใช่สำหรับคุณ"
+  },
+  "Pour Over rewards patience with clarity and brightness. French Press gives a fuller, heavier cup. AeroPress is fast, forgiving, and easy to travel with. Espresso is concentrated and intense, the base for milk drinks. None is more correct than the others — the right method is simply the one that fits your morning.": {
+    "ko": "핸드드립은 인내심을 들인 만큼 맑고 화사한 맛으로 보답합니다. 프렌치프레스는 더 묵직하고 진한 한 잔을 만들어 줍니다. 에어로프레스는 빠르고 실패가 적어 여행 중에도 부담 없이 즐길 수 있습니다. 에스프레소는 진하고 강렬해 우유 음료의 베이스가 되어줍니다. 어느 것이 더 정답이라기보다, 여러분의 아침에 어울리는 방법이 가장 좋은 방법입니다.",
+    "zh": "手冲需要耐心，回报你清澈明亮的风味；法压壶带来更醇厚饱满的口感；爱乐压快速、容错率高，也方便携带；意式浓缩则浓郁强劲，是牛奶咖啡的基础。没有哪种方式更“正确”——最适合你早晨节奏的，就是最好的方式。",
+    "ru": "Пуровер вознаграждает терпение чистотой и яркостью вкуса. Френч-пресс дает более полную, плотную чашку. AeroPress — быстрый, прощающий ошибки способ, удобный в поездках. Эспрессо — концентрированный и насыщенный, основа для молочных напитков. Ни один метод не «правильнее» других — верный выбор тот, что подходит именно вашему утру.",
+    "th": "การดริปให้ผลตอบแทนความอดทนด้วยรสชาติที่ใสสะอาดและสดใส เฟรนช์เพรสให้รสชาติที่เข้มข้นและหนักแน่นกว่า แอโรเพรสรวดเร็ว ผิดพลาดยาก และพกพาสะดวกเวลาเดินทาง ส่วนเอสเพรสโซเข้มข้นจัดจ้าน เหมาะเป็นฐานของเมนูใส่นม ไม่มีวิธีไหนถูกกว่ากัน วิธีที่ใช่คือวิธีที่เข้ากับเช้าวันนั้นของคุณ"
+  },
+  "Brew Guide": {
+    "ko": "브루 가이드",
+    "zh": "冲煮指南",
+    "ru": "Гайд по завариванию",
+    "th": "คู่มือการชง"
+  },
+  "Four ways to brew great coffee.": {
+    "ko": "훌륭한 커피를 내리는 네 가지 방법",
+    "zh": "四种冲煮出好咖啡的方式。",
+    "ru": "Четыре способа заварить отличный кофе.",
+    "th": "สี่วิธีชงกาแฟให้อร่อย"
+  },
+  "Pour Over": {
+    "ko": "핸드드립",
+    "zh": "手冲",
+    "ru": "Пуровер",
+    "th": "ดริป"
+  },
+  "AeroPress": {
+    "ko": "에어로프레스",
+    "zh": "爱乐压",
+    "ru": "AeroPress",
+    "th": "แอโรเพรส"
+  },
+  "Dose": {
+    "ko": "원두량",
+    "zh": "粉量",
+    "ru": "Доза",
+    "th": "ปริมาณกาแฟ"
+  },
+  "Water": {
+    "ko": "물량",
+    "zh": "水量",
+    "ru": "Вода",
+    "th": "ปริมาณน้ำ"
+  },
+  "Time": {
+    "ko": "추출 시간",
+    "zh": "时间",
+    "ru": "Время",
+    "th": "เวลา"
+  },
+  "Temp": {
+    "ko": "물 온도",
+    "zh": "温度",
+    "ru": "Темп.",
+    "th": "อุณหภูมิ"
+  },
+  "Yield": {
+    "ko": "추출량",
+    "zh": "萃取量",
+    "ru": "Выход",
+    "th": "ปริมาณที่ได้"
+  },
+  "Bloom with 40ml for 30 seconds, then pour in slow, even circles. A clean filter rinse removes any papery taste.": {
+    "ko": "40ml로 30초간 블루밍한 뒤, 천천히 일정한 원을 그리며 부어주세요. 필터를 미리 헹구면 종이 맛을 없앨 수 있습니다.",
+    "zh": "用40毫升水闷蒸30秒，再以缓慢均匀的绕圈方式注水。事先冲洗滤纸可去除纸味。",
+    "ru": "Сделайте блум 40 мл воды в течение 30 секунд, затем лейте медленными равномерными кругами. Промывка фильтра избавит от бумажного привкуса.",
+    "th": "บลูมด้วยน้ำ 40 มล. เป็นเวลา 30 วินาที จากนั้นรินน้ำเป็นวงกลมช้า ๆ อย่างสม่ำเสมอ การล้างกระดาษกรองก่อนชงช่วยขจัดกลิ่นกระดาษ"
+  },
+  "Use a coarse grind. Stir gently after four minutes, let the grounds settle for a moment, then press slowly.": {
+    "ko": "굵게 분쇄해 사용하세요. 4분 후 가볍게 저은 뒤 잠시 가라앉히고, 천천히 눌러 내려주세요.",
+    "zh": "使用粗研磨。四分钟后轻轻搅拌，静置片刻让咖啡粉沉淀，再缓慢下压。",
+    "ru": "Используйте крупный помол. Через четыре минуты слегка размешайте, дайте гуще осесть, затем медленно нажмите на поршень.",
+    "th": "ใช้การบดหยาบ คนเบา ๆ หลังผ่านไป 4 นาที รอให้ผงกาแฟตกตะกอนสักครู่ แล้วค่อย ๆ กดลง"
+  },
+  "Steep for one minute, stir gently, then press slowly and evenly over about 30 seconds.": {
+    "ko": "1분간 우린 뒤 가볍게 저어주고, 약 30초에 걸쳐 천천히 고르게 눌러주세요.",
+    "zh": "浸泡一分钟，轻轻搅拌，再花约30秒缓慢均匀地下压。",
+    "ru": "Настаивайте одну минуту, слегка перемешайте, затем медленно и равномерно нажимайте около 30 секунд.",
+    "th": "แช่ไว้ 1 นาที คนเบา ๆ แล้วค่อย ๆ กดลงอย่างสม่ำเสมอในเวลาประมาณ 30 วินาที"
+  },
+  "Grind fine. Pull a slow, even shot, and let it rest a moment before drinking to round out the flavor.": {
+    "ko": "곱게 분쇄하세요. 천천히 일정하게 추출한 뒤, 마시기 전 잠시 두면 맛이 한층 부드러워집니다.",
+    "zh": "使用细研磨。缓慢均匀地萃取，饮用前静置片刻，让风味更加圆润。",
+    "ru": "Используйте тонкий помол. Извлекайте медленно и равномерно, дайте эспрессо немного отдохнуть перед питьем — вкус станет более округлым.",
+    "th": "บดละเอียด สกัดช้า ๆ อย่างสม่ำเสมอ และพักไว้สักครู่ก่อนดื่มเพื่อให้รสชาติกลมกล่อมยิ่งขึ้น"
+  },
+  "Brew Tips": {
+    "ko": "브루잉 팁",
+    "zh": "冲煮小贴士",
+    "ru": "Советы по завариванию",
+    "th": "เคล็ดลับการชง"
+  },
+  "A few small things that matter.": {
+    "ko": "디테일이 맛을 좌우합니다",
+    "zh": "这些细节，至关重要。",
+    "ru": "Несколько мелочей, которые важны.",
+    "th": "รายละเอียดเล็ก ๆ ที่สำคัญ"
+  },
+  "Fresh Water": {
+    "ko": "신선한 물",
+    "zh": "新鲜的水",
+    "ru": "Свежая вода",
+    "th": "น้ำสะอาดสด"
+  },
+  "Clean, filtered water lets the coffee's real character come through.": {
+    "ko": "깨끗하게 정수된 물은 커피 본연의 개성을 온전히 드러내 줍니다.",
+    "zh": "干净的过滤水能让咖啡真正的风味特质完整呈现。",
+    "ru": "Чистая фильтрованная вода раскрывает настоящий характер кофе.",
+    "th": "น้ำสะอาดที่ผ่านการกรองช่วยให้เอกลักษณ์ที่แท้จริงของกาแฟโดดเด่นขึ้นมา"
+  },
+  "Grind Fresh": {
+    "ko": "직전에 분쇄하기",
+    "zh": "现磨现煮",
+    "ru": "Мелите перед завариванием",
+    "th": "บดสดใหม่"
+  },
+  "Grind just before brewing. Coffee loses its brightness quickly once ground.": {
+    "ko": "추출 직전에 분쇄하세요. 갈아 놓은 커피는 화사한 향미를 금방 잃습니다.",
+    "zh": "冲煮前再研磨。咖啡一旦磨好，风味的明亮感会很快流失。",
+    "ru": "Мелите непосредственно перед завариванием. Смолотый кофе быстро теряет яркость вкуса.",
+    "th": "บดกาแฟก่อนชงทันที เพราะกาแฟที่บดแล้วจะสูญเสียความสดใสของรสชาติไปอย่างรวดเร็ว"
+  },
+  "Measure by Weight": {
+    "ko": "저울로 계량하기",
+    "zh": "用秤精准计量",
+    "ru": "Отмеряйте по весу",
+    "th": "ชั่งน้ำหนักให้แม่นยำ"
+  },
+  "A kitchen scale gives a far more consistent cup than a scoop ever will.": {
+    "ko": "계량스푼보다 주방 저울을 사용하면 훨씬 더 일정한 맛을 낼 수 있습니다.",
+    "zh": "厨房秤能带来比量勺精准得多、稳定得多的一杯咖啡。",
+    "ru": "Кухонные весы дают гораздо более стабильный результат, чем мерная ложка.",
+    "th": "เครื่องชั่งในครัวให้ผลลัพธ์ที่สม่ำเสมอกว่าการใช้ช้อนตวงมาก"
+  },
+  "Rinse Your Filter": {
+    "ko": "필터 헹구기",
+    "zh": "冲洗滤纸",
+    "ru": "Промойте фильтр",
+    "th": "ล้างกระดาษกรอง"
+  },
+  "A quick hot water rinse removes papery taste and warms the brewer.": {
+    "ko": "뜨거운 물로 간단히 헹구면 종이 맛을 없애고 기구도 예열할 수 있습니다.",
+    "zh": "用热水快速冲洗一遍，既能去除纸味，也能预热冲煮器具。",
+    "ru": "Быстрая промывка горячей водой убирает бумажный привкус и прогревает прибор.",
+    "th": "การล้างด้วยน้ำร้อนอย่างรวดเร็วช่วยขจัดกลิ่นกระดาษและอุ่นเครื่องชงไปในตัว"
+  },
+  "Ready to brew?": {
+    "ko": "이제 준비되셨나요?",
+    "zh": "准备好开始冲煮了吗？",
+    "ru": "Готовы заварить?",
+    "th": "พร้อมลงมือชงหรือยัง?"
+  },
+  "Explore the coffees behind these guides.": {
+    "ko": "이 가이드에 어울리는 커피를 만나보세요.",
+    "zh": "探索这些指南背后的咖啡。",
+    "ru": "Откройте для себя кофе, о котором эти гайды.",
+    "th": "สำรวจกาแฟที่อยู่เบื้องหลังคู่มือเหล่านี้"
+  },
+  "View the Collection": {
+    "ko": "컬렉션 보기",
+    "zh": "浏览咖啡系列",
+    "ru": "Смотреть коллекцию",
+    "th": "ดูคอลเลกชันกาแฟ"
+  },
+  "Coffee Collection": {
+    "ko": "커피 컬렉션",
+    "zh": "咖啡系列",
+    "ru": "Коллекция кофе",
+    "th": "คอลเลกชันกาแฟ"
+  },
+  "Thoughtfully sourced from Northern Thailand, each coffee reflects its unique origin and character.": {
+    "ko": "태국 북부에서 정성껏 소싱한 각각의 커피는 저마다의 고유한 원산지와 개성을 담고 있습니다.",
+    "zh": "精心甄选自泰国北部，每一款咖啡都展现其独特的产地风味与个性。",
+    "ru": "Тщательно отобрано в Северном Таиланде — каждый сорт отражает уникальное происхождение и характер.",
+    "th": "คัดสรรอย่างพิถีพิถันจากภาคเหนือของไทย กาแฟแต่ละชนิดสะท้อนแหล่งกำเนิดและเอกลักษณ์เฉพาะตัว"
+  },
+  "Thoughtfully sourced from Northern Thailand, carefully roasted for everyday moments.": {
+    "ko": "태국 북부에서 정성껏 소싱하여, 일상의 순간을 위해 세심하게 로스팅했습니다.",
+    "zh": "精选来自泰国北部，用心烘焙，成就日常的美好时刻。",
+    "ru": "Тщательно отобрано в Северном Таиланде, бережно обжарено для повседневных моментов.",
+    "th": "คัดสรรอย่างพิถีพิถันจากภาคเหนือของไทย คั่วอย่างใส่ใจเพื่อทุกช่วงเวลาในแต่ละวัน"
+  },
+  "Y-Signature": {
+    "ko": "Y-Signature",
+    "zh": "Y-Signature",
+    "ru": "Y-Signature",
+    "th": "Y-Signature"
+  },
+  "Espresso Roast": {
+    "ko": "Espresso Roast",
+    "zh": "Espresso Roast",
+    "ru": "Espresso Roast",
+    "th": "Espresso Roast"
+  },
+  "Honey Process": {
+    "ko": "Honey Process",
+    "zh": "Honey Process",
+    "ru": "Honey Process",
+    "th": "Honey Process"
+  },
+  "Doi Chang": {
+    "ko": "Doi Chang",
+    "zh": "Doi Chang",
+    "ru": "Doi Chang",
+    "th": "Doi Chang"
+  },
+  "Peaberry": {
+    "ko": "Peaberry",
+    "zh": "Peaberry",
+    "ru": "Peaberry",
+    "th": "Peaberry"
+  },
+  "Omkoi": {
+    "ko": "Omkoi",
+    "zh": "Omkoi",
+    "ru": "Omkoi",
+    "th": "Omkoi"
+  },
+  "Balanced and velvety with notes of dark chocolate and apple.": {
+    "ko": "다크 초콜릿과 사과 향이 어우러진 균형 잡히고 벨벳처럼 부드러운 맛.",
+    "zh": "均衡丝滑，带有黑巧克力与苹果的风味。",
+    "ru": "Сбалансированный, бархатистый, с нотами тёмного шоколада и яблока.",
+    "th": "รสชาติสมดุลนุ่มนวลดั่งกำมะหยี่ พร้อมกลิ่นดาร์กช็อกโกแลตและแอปเปิ้ล"
+  },
+  "Rich and full-bodied with deep sweetness and a lingering dark chocolate finish.": {
+    "ko": "짙은 단맛과 오래 남는 다크 초콜릿 여운이 있는 진하고 묵직한 맛.",
+    "zh": "浓郁醇厚，甜感深邃，收尾留有悠长的黑巧克力余韵。",
+    "ru": "Насыщенный, плотный, с глубокой сладостью и долгим послевкусием тёмного шоколада.",
+    "th": "เข้มข้นและเต็มรสชาติ พร้อมความหวานลึกและติดปลายลิ้นด้วยดาร์กช็อกโกแลต"
+  },
+  "Naturally sweet and smooth with gentle floral notes and a rounded body.": {
+    "ko": "은은한 꽃향과 둥글게 감싸는 바디감을 지닌 자연스러운 단맛의 부드러운 커피.",
+    "zh": "天然香甜，口感顺滑，带有柔和的花香与圆润的醇厚感。",
+    "ru": "Натурально сладкий и мягкий, с нежными цветочными нотами и округлым телом.",
+    "th": "หวานธรรมชาตินุ่มนวล พร้อมกลิ่นดอกไม้อ่อน ๆ และบอดี้ที่กลมกล่อม"
+  },
+  "Bright and refined with floral notes and a gentle spicy finish.": {
+    "ko": "화사하고 세련된 맛에 꽃향과 은은한 스파이시함이 여운으로 남는 커피.",
+    "zh": "明亮细腻，带有花香与柔和的辛香余韵。",
+    "ru": "Яркий и утончённый, с цветочными нотами и мягким пряным послевкусием.",
+    "th": "สดใสและประณีต พร้อมกลิ่นดอกไม้และรสเผ็ดอ่อน ๆ ติดปลายลิ้น"
+  },
+  "Refined and silky with layered sweetness, bright citrus, and a clean finish.": {
+    "ko": "층층이 쌓인 단맛과 화사한 시트러스, 깔끔한 여운을 지닌 섬세하고 부드러운 커피.",
+    "zh": "细腻丝滑，层次分明的甜感，明亮的柑橘调性，收尾干净利落。",
+    "ru": "Утончённый и шелковистый, с многослойной сладостью, яркими цитрусовыми нотами и чистым финишем.",
+    "th": "ประณีตนุ่มนวลดั่งไหม พร้อมความหวานหลายชั้น กลิ่นซิตรัสสดใส และรสชาติที่สะอาดในตอนท้าย"
+  },
+  "Vibrant and elegant with wild honey notes and a delicate clean finish.": {
+    "ko": "생동감 있고 우아한 맛에 야생 꿀 향과 섬세하고 깔끔한 여운을 지닌 커피.",
+    "zh": "活泼优雅，带有野蜜香气，收尾细腻干净。",
+    "ru": "Яркий и элегантный, с нотами дикого мёда и деликатным чистым финишем.",
+    "th": "สดใสและสง่างาม พร้อมกลิ่นน้ำผึ้งป่าและรสชาติสะอาดละเมียดในตอนท้าย"
+  },
+  "Discover": {
+    "ko": "자세히 보기",
+    "zh": "探索",
+    "ru": "Подробнее",
+    "th": "ดูเพิ่มเติม"
+  },
+  "View All Coffees": {
+    "ko": "전체 커피 보기",
+    "zh": "查看全部咖啡",
+    "ru": "Смотреть все сорта",
+    "th": "ดูกาแฟทั้งหมด"
+  },
+  "Every cup has a story.": {
+    "ko": "모든 한 잔에는 이야기가 있습니다.",
+    "zh": "每一杯，都有它的故事。",
+    "ru": "У каждой чашки своя история.",
+    "th": "ทุกแก้วมีเรื่องราวของตัวเอง"
+  },
+  "Every story begins with careful hands — the hands that grow coffee, season after season.<br>Working closely with coffee farmers across Northern Thailand, we choose coffees that reflect the true character of their origin.": {
+    "ko": "모든 이야기는 정성스러운 손길에서 시작됩니다 — 계절마다 커피를 길러내는 그 손길에서요.<br>태국 북부 곳곳의 커피 농부들과 긴밀히 협력하며, 원산지 본연의 개성을 담은 커피를 골라냅니다.",
+    "zh": "每个故事都始于一双双用心的手——那些季复一季种植咖啡的手。<br>我们与泰国北部各地的咖啡农密切合作，精选真正体现产地特质的咖啡。",
+    "ru": "Каждая история начинается с заботливых рук — рук, которые выращивают кофе сезон за сезоном.<br>Тесно работая с фермерами по всему Северному Таиланду, мы отбираем сорта, отражающие подлинный характер их происхождения.",
+    "th": "ทุกเรื่องราวเริ่มต้นจากมือที่ใส่ใจ — มือที่ปลูกกาแฟในทุกฤดูกาล<br>เราทำงานใกล้ชิดกับเกษตรกรผู้ปลูกกาแฟทั่วภาคเหนือของไทย เพื่อคัดสรรกาแฟที่สะท้อนเอกลักษณ์แท้จริงของแหล่งปลูก"
+  },
+  "Freshly roasted and carefully brewed, each cup carries that care forward.<br>Every cup begins with people. Every moment becomes a memory.": {
+    "ko": "신선하게 로스팅하고 정성껏 내린 한 잔에는 그 마음이 그대로 이어집니다.<br>모든 잔은 사람으로부터 시작되고, 모든 순간은 기억이 됩니다.",
+    "zh": "新鲜烘焙、悉心冲煮，每一杯都延续着这份用心。<br>每一杯咖啡都始于人，每一个瞬间都成为回忆。",
+    "ru": "Свежеобжаренный и бережно заваренный, каждый глоток продолжает эту заботу.<br>Каждая чашка начинается с людей. Каждый момент становится воспоминанием.",
+    "th": "คั่วสดใหม่และชงอย่างพิถีพิถัน ทุกแก้วสืบทอดความใส่ใจนั้นต่อไป<br>ทุกแก้วเริ่มต้นจากผู้คน ทุกช่วงเวลากลายเป็นความทรงจำ"
+  },
+  "Locations": {
+    "ko": "매장 위치",
+    "zh": "门店位置",
+    "ru": "Локации",
+    "th": "สาขา"
+  },
+  "Contact": {
+    "ko": "연락처",
+    "zh": "联系方式",
+    "ru": "Контакты",
+    "th": "ติดต่อเรา"
+  },
+  "Customer Inquiries": {
+    "ko": "고객 문의",
+    "zh": "客户咨询",
+    "ru": "Вопросы клиентов",
+    "th": "สอบถามข้อมูลลูกค้า"
+  },
+  "Orders": {
+    "ko": "주문 문의",
+    "zh": "订购咨询",
+    "ru": "Заказы",
+    "th": "สั่งซื้อ"
+  },
+  "A community initiative by YES Coffee.": {
+    "ko": "YES Coffee가 함께하는 지역사회 나눔 활동입니다.",
+    "zh": "YES Coffee 发起的社区公益项目。",
+    "ru": "Общественная инициатива от YES Coffee.",
+    "th": "โครงการเพื่อชุมชนโดย YES Coffee"
+  },
+  "Visit Dream Canvas": {
+    "ko": "Dream Canvas 방문하기",
+    "zh": "访问 Dream Canvas",
+    "ru": "Перейти на Dream Canvas",
+    "th": "เยี่ยมชม Dream Canvas"
+  },
+  "Privacy": {
+    "ko": "개인정보처리방침",
+    "zh": "隐私政策",
+    "ru": "Конфиденциальность",
+    "th": "นโยบายความเป็นส่วนตัว"
+  },
+  "Terms": {
+    "ko": "이용약관",
+    "zh": "服务条款",
+    "ru": "Условия использования",
+    "th": "ข้อกำหนดการใช้งาน"
+  },
+  "Coffee for everyday moments.": {
+    "ko": "일상의 순간을 위한 커피.",
+    "zh": "为日常时刻而生的咖啡。",
+    "ru": "Кофе для повседневных моментов.",
+    "th": "กาแฟเพื่อทุกช่วงเวลาในชีวิตประจำวัน"
+  },
+  "From Northern Thailand, with care.": {
+    "ko": "태국 북부에서, 정성을 담아.",
+    "zh": "来自泰国北部，用心呈现。",
+    "ru": "Из Северного Таиланда — с заботой.",
+    "th": "จากภาคเหนือของไทย ด้วยความใส่ใจ"
+  },
+  "Specialty coffee from Northern Thailand.": {
+    "ko": "태국 북부의 스페셜티 커피.",
+    "zh": "来自泰国北部的精品咖啡。",
+    "ru": "Спешелти-кофе из Северного Таиланда.",
+    "th": "สเปเชียลตี้คอฟฟี่จากภาคเหนือของไทย"
+  },
+  "Thoughtfully roasted in Thailand.": {
+    "ko": "태국에서 정성껏 로스팅했습니다.",
+    "zh": "在泰国用心烘焙。",
+    "ru": "Бережно обжарено в Таиланде.",
+    "th": "คั่วอย่างพิถีพิถันในประเทศไทย"
+  },
+  "Roasted in Thailand.": {
+    "ko": "태국에서 로스팅했습니다.",
+    "zh": "在泰国烘焙。",
+    "ru": "Обжарено в Таиланде.",
+    "th": "คั่วในประเทศไทย"
+  },
+  "Legal": {
+    "ko": "법적 고지",
+    "zh": "法律信息",
+    "ru": "Правовая информация",
+    "th": "ข้อมูลทางกฎหมาย"
+  },
+  "Privacy Policy": {
+    "ko": "개인정보처리방침",
+    "zh": "隐私政策",
+    "ru": "Политика конфиденциальности",
+    "th": "นโยบายความเป็นส่วนตัว"
+  },
+  "Last updated: August 2026. This policy explains how YES Coffee collects, uses, and protects your information when you visit our website, order our coffee, or connect with Dream Canvas.": {
+    "ko": "최종 업데이트: 2026년 8월. 본 방침은 여러분이 저희 웹사이트를 방문하거나, 커피를 주문하거나, Dream Canvas와 연결될 때 YES Coffee가 개인정보를 어떻게 수집·이용·보호하는지 설명합니다.",
+    "zh": "最近更新：2026年8月。本政策说明您在访问我们的网站、订购咖啡或参与 Dream Canvas 时，YES Coffee 如何收集、使用和保护您的信息。",
+    "ru": "Последнее обновление: август 2026 г. Настоящая политика объясняет, как YES Coffee собирает, использует и защищает вашу информацию при посещении нашего сайта, заказе кофе или взаимодействии с Dream Canvas.",
+    "th": "อัปเดตล่าสุด: สิงหาคม 2026 นโยบายนี้อธิบายวิธีที่ YES Coffee เก็บรวบรวม ใช้ และปกป้องข้อมูลของคุณเมื่อคุณเข้าชมเว็บไซต์ สั่งซื้อกาแฟของเรา หรือติดต่อกับ Dream Canvas"
+  },
+  "Introduction": {
+    "ko": "소개",
+    "zh": "简介",
+    "ru": "Введение",
+    "th": "บทนำ"
+  },
+  "YES Coffee is a specialty coffee roastery based in Rawai, Phuket, Thailand, sourcing beans from Northern Thailand. We respect your privacy and are committed to being clear and honest about the information we collect and how we use it. This policy applies to our website and any related services offered under the YES Coffee name.": {
+    "ko": "YES Coffee는 태국 푸켓 라와이에 위치한 스페셜티 커피 로스터리로, 태국 북부에서 원두를 소싱합니다. 저희는 여러분의 개인정보를 존중하며, 수집하는 정보와 그 활용 방식에 대해 명확하고 정직하게 안내할 것을 약속드립니다. 본 방침은 저희 웹사이트 및 YES Coffee 명의로 제공되는 모든 관련 서비스에 적용됩니다.",
+    "zh": "YES Coffee 是一家位于泰国普吉岛拉威的精品咖啡烘焙工坊，咖啡豆采购自泰国北部。我们尊重您的隐私，并致力于清楚、诚实地说明我们收集的信息及其使用方式。本政策适用于我们的网站以及以 YES Coffee 名义提供的所有相关服务。",
+    "ru": "YES Coffee — это спешелти-кофейня и обжарочный цех, расположенные в Раваи, Пхукет, Таиланд, закупающие зерно в Северном Таиланде. Мы уважаем вашу конфиденциальность и стремимся честно и понятно рассказывать о том, какую информацию собираем и как её используем. Настоящая политика распространяется на наш сайт и любые связанные услуги, предоставляемые под именем YES Coffee.",
+    "th": "YES Coffee คือโรงคั่วกาแฟสเปเชียลตี้ตั้งอยู่ที่หาดราไวย์ จังหวัดภูเก็ต ประเทศไทย โดยคัดสรรเมล็ดกาแฟจากภาคเหนือของไทย เราเคารพความเป็นส่วนตัวของคุณและมุ่งมั่นที่จะชี้แจงอย่างชัดเจนและตรงไปตรงมาเกี่ยวกับข้อมูลที่เราเก็บรวบรวมและวิธีการใช้งาน นโยบายนี้ครอบคลุมเว็บไซต์ของเราและบริการที่เกี่ยวข้องทั้งหมดภายใต้ชื่อ YES Coffee"
+  },
+  "Information We Collect": {
+    "ko": "수집하는 정보",
+    "zh": "我们收集的信息",
+    "ru": "Какую информацию мы собираем",
+    "th": "ข้อมูลที่เราเก็บรวบรวม"
+  },
+  "We may collect information you provide directly, such as your name, email address, and order details when you submit a request to order or contact us. We may also collect limited technical information automatically, such as browser type, device type, and general usage patterns, to help us understand how our website is used.": {
+    "ko": "주문 요청이나 문의를 남기실 때 제공하시는 성명, 이메일 주소, 주문 상세 정보와 같은 정보를 수집할 수 있습니다. 또한 웹사이트 이용 방식을 파악하기 위해 브라우저 종류, 기기 종류, 일반적인 이용 패턴 등 제한된 기술 정보를 자동으로 수집할 수 있습니다.",
+    "zh": "当您提交订购请求或联系我们时，我们可能会收集您直接提供的信息，例如姓名、电子邮箱及订单详情。我们也可能自动收集有限的技术信息，如浏览器类型、设备类型及一般使用模式，以帮助我们了解网站的使用情况。",
+    "ru": "Мы можем собирать информацию, которую вы предоставляете напрямую — например, имя, адрес электронной почты и детали заказа при оформлении заявки или обращении к нам. Мы также можем автоматически собирать ограниченную техническую информацию, такую как тип браузера, тип устройства и общие модели использования, чтобы понимать, как используется наш сайт.",
+    "th": "เราอาจเก็บรวบรวมข้อมูลที่คุณให้โดยตรง เช่น ชื่อ อีเมล และรายละเอียดคำสั่งซื้อ เมื่อคุณส่งคำขอสั่งซื้อหรือติดต่อเรา นอกจากนี้เราอาจเก็บข้อมูลทางเทคนิคที่จำกัดโดยอัตโนมัติ เช่น ประเภทเบราว์เซอร์ ประเภทอุปกรณ์ และรูปแบบการใช้งานทั่วไป เพื่อช่วยให้เราเข้าใจวิธีที่ผู้ใช้เข้าชมเว็บไซต์ของเรา"
+  },
+  "How We Use Information": {
+    "ko": "정보 이용 방법",
+    "zh": "我们如何使用信息",
+    "ru": "Как мы используем информацию",
+    "th": "เราใช้ข้อมูลอย่างไร"
+  },
+  "We use the information we collect to respond to inquiries, process order requests, communicate with you about YES Coffee, and improve our website and offerings. We do not sell your personal information to third parties.": {
+    "ko": "수집한 정보는 문의에 답변하고, 주문 요청을 처리하며, YES Coffee 관련 소식을 전하고, 웹사이트와 상품을 개선하는 데 활용됩니다. 저희는 개인정보를 제3자에게 판매하지 않습니다.",
+    "zh": "我们使用所收集的信息来回复咨询、处理订购请求、与您沟通 YES Coffee 相关事宜，并改进我们的网站与产品。我们不会将您的个人信息出售给第三方。",
+    "ru": "Мы используем собранную информацию, чтобы отвечать на запросы, обрабатывать заявки на заказ, связываться с вами по вопросам YES Coffee и улучшать наш сайт и предложения. Мы не продаём вашу личную информацию третьим лицам.",
+    "th": "เราใช้ข้อมูลที่เก็บรวบรวมเพื่อตอบข้อซักถาม ดำเนินการตามคำขอสั่งซื้อ สื่อสารกับคุณเกี่ยวกับ YES Coffee และปรับปรุงเว็บไซต์และผลิตภัณฑ์ของเรา เราไม่ขายข้อมูลส่วนบุคคลของคุณให้บุคคลที่สาม"
+  },
+  "Cookies": {
+    "ko": "쿠키",
+    "zh": "Cookie",
+    "ru": "Файлы cookie",
+    "th": "คุกกี้"
+  },
+  "Our website may use cookies or similar technologies to support basic functionality and to understand how visitors interact with our pages. You can adjust your browser settings to refuse cookies, though some parts of the site may not function as intended without them.": {
+    "ko": "저희 웹사이트는 기본 기능을 지원하고 방문자가 페이지와 상호작용하는 방식을 파악하기 위해 쿠키 또는 유사한 기술을 사용할 수 있습니다. 브라우저 설정에서 쿠키를 거부할 수 있으나, 그 경우 사이트 일부 기능이 의도한 대로 작동하지 않을 수 있습니다.",
+    "zh": "我们的网站可能使用 Cookie 或类似技术，以支持基本功能并了解访客与页面的互动方式。您可以调整浏览器设置以拒绝 Cookie，但网站的部分功能可能因此无法正常运作。",
+    "ru": "Наш сайт может использовать файлы cookie или аналогичные технологии для поддержки базовой функциональности и понимания того, как посетители взаимодействуют с нашими страницами. Вы можете настроить браузер на отклонение cookie, однако некоторые разделы сайта могут работать некорректно без них.",
+    "th": "เว็บไซต์ของเราอาจใช้คุกกี้หรือเทคโนโลยีที่คล้ายกันเพื่อรองรับฟังก์ชันพื้นฐานและทำความเข้าใจวิธีที่ผู้เข้าชมโต้ตอบกับหน้าเว็บของเรา คุณสามารถปรับการตั้งค่าเบราว์เซอร์เพื่อปฏิเสธคุกกี้ได้ แม้ว่าบางส่วนของเว็บไซต์อาจทำงานได้ไม่สมบูรณ์หากไม่มีคุกกี้"
+  },
+  "Third-Party Services": {
+    "ko": "제3자 서비스",
+    "zh": "第三方服务",
+    "ru": "Сторонние сервисы",
+    "th": "บริการจากบุคคลที่สาม"
+  },
+  "We may rely on trusted third-party services, such as email and hosting providers, to operate our website and fulfil order requests. These providers only access the information necessary to perform their services and are expected to handle it responsibly.": {
+    "ko": "저희는 웹사이트 운영과 주문 요청 처리를 위해 이메일 및 호스팅 제공업체와 같은 신뢰할 수 있는 제3자 서비스를 이용할 수 있습니다. 이들 업체는 서비스 수행에 필요한 정보에만 접근하며, 이를 책임감 있게 다룰 것으로 기대됩니다.",
+    "zh": "我们可能依赖值得信赖的第三方服务，例如电子邮件与主机服务商，以运营我们的网站并履行订购请求。这些服务商仅可访问履行其服务所必需的信息，并应负责任地处理该信息。",
+    "ru": "Мы можем полагаться на доверенные сторонние сервисы, такие как поставщики услуг электронной почты и хостинга, для работы нашего сайта и выполнения заявок на заказ. Эти поставщики получают доступ только к информации, необходимой для оказания их услуг, и обязаны обращаться с ней ответственно.",
+    "th": "เราอาจใช้บริการจากบุคคลที่สามที่เชื่อถือได้ เช่น ผู้ให้บริการอีเมลและโฮสติ้ง เพื่อดำเนินการเว็บไซต์และคำขอสั่งซื้อของเรา ผู้ให้บริการเหล่านี้จะเข้าถึงเฉพาะข้อมูลที่จำเป็นต่อการให้บริการเท่านั้น และคาดว่าจะจัดการข้อมูลอย่างมีความรับผิดชอบ"
+  },
+  "Data Security": {
+    "ko": "데이터 보안",
+    "zh": "数据安全",
+    "ru": "Безопасность данных",
+    "th": "ความปลอดภัยของข้อมูล"
+  },
+  "We take reasonable steps to protect the information you share with us. While no method of transmission or storage is completely secure, we work to safeguard your data against unauthorized access, alteration, or disclosure.": {
+    "ko": "저희는 여러분이 제공하신 정보를 보호하기 위해 합리적인 조치를 취하고 있습니다. 어떤 전송이나 저장 방식도 완벽하게 안전할 수는 없지만, 무단 접근·변경·유출로부터 데이터를 지키기 위해 노력하고 있습니다.",
+    "zh": "我们采取合理措施保护您与我们分享的信息。虽然没有任何传输或存储方式是绝对安全的，但我们努力保护您的数据，防止未经授权的访问、篡改或披露。",
+    "ru": "Мы предпринимаем разумные меры для защиты информации, которой вы с нами делитесь. Хотя ни один способ передачи или хранения данных не является абсолютно безопасным, мы стремимся защищать ваши данные от несанкционированного доступа, изменения или раскрытия.",
+    "th": "เราดำเนินมาตรการที่เหมาะสมเพื่อปกป้องข้อมูลที่คุณแบ่งปันกับเรา แม้ว่าจะไม่มีวิธีการส่งหรือจัดเก็บข้อมูลใดที่ปลอดภัยอย่างสมบูรณ์แบบ แต่เรามุ่งมั่นปกป้องข้อมูลของคุณจากการเข้าถึง การเปลี่ยนแปลง หรือการเปิดเผยโดยไม่ได้รับอนุญาต"
+  },
+  "Your Rights": {
+    "ko": "이용자의 권리",
+    "zh": "您的权利",
+    "ru": "Ваши права",
+    "th": "สิทธิของคุณ"
+  },
+  "You may request access to, correction of, or deletion of your personal information at any time. To make such a request, please contact us using the details below and we will respond as promptly as we can.": {
+    "ko": "언제든지 개인정보에 대한 열람, 정정, 삭제를 요청하실 수 있습니다. 요청을 원하시면 아래 연락처로 문의해 주시면 신속히 답변드리겠습니다.",
+    "zh": "您可以随时申请查阅、更正或删除您的个人信息。如需提出此类请求，请通过以下联系方式与我们联系，我们将尽快回复。",
+    "ru": "Вы можете в любое время запросить доступ к своей личной информации, её исправление или удаление. Чтобы сделать такой запрос, свяжитесь с нами по указанным ниже контактам — мы ответим как можно скорее.",
+    "th": "คุณสามารถขอเข้าถึง แก้ไข หรือลบข้อมูลส่วนบุคคลของคุณได้ทุกเมื่อ หากต้องการส่งคำขอดังกล่าว กรุณาติดต่อเราตามรายละเอียดด้านล่าง และเราจะตอบกลับโดยเร็วที่สุด"
+  },
+  "If you have questions about this Privacy Policy or how your information is handled, please reach us at": {
+    "ko": "본 개인정보처리방침이나 정보 처리 방식에 대해 궁금한 점이 있으시면 아래로 문의해 주세요:",
+    "zh": "如果您对本隐私政策或您的信息处理方式有任何疑问，请联系我们：",
+    "ru": "Если у вас есть вопросы об этой Политике конфиденциальности или об обработке вашей информации, свяжитесь с нами:",
+    "th": "หากคุณมีคำถามเกี่ยวกับนโยบายความเป็นส่วนตัวนี้หรือวิธีการจัดการข้อมูลของคุณ กรุณาติดต่อเราที่"
+  },
+  "for general inquiries, or": {
+    "ko": "(일반 문의), 또는",
+    "zh": "（一般咨询），或",
+    "ru": "по общим вопросам, или",
+    "th": "สำหรับข้อสอบถามทั่วไป หรือ"
+  },
+  "for order-related questions.": {
+    "ko": "(주문 관련 문의)로 연락해 주세요.",
+    "zh": "（订单相关问题）。",
+    "ru": "по вопросам, связанным с заказом.",
+    "th": "สำหรับคำถามเกี่ยวกับการสั่งซื้อ"
+  },
+  "Terms of Service": {
+    "ko": "이용약관",
+    "zh": "服务条款",
+    "ru": "Условия использования",
+    "th": "ข้อกำหนดการใช้งาน"
+  },
+  "Last updated: August 2026. These terms govern your use of the YES Coffee website and your orders with us. By using this site or placing an order, you agree to the terms below.": {
+    "ko": "최종 업데이트: 2026년 8월. 본 약관은 YES Coffee 웹사이트 이용 및 저희와의 주문 거래에 적용됩니다. 본 사이트를 이용하거나 주문하시면 아래 약관에 동의하시는 것으로 간주됩니다.",
+    "zh": "最近更新：2026年8月。本条款适用于您对 YES Coffee 网站的使用及您与我们之间的订单交易。使用本网站或下单即表示您同意以下条款。",
+    "ru": "Последнее обновление: август 2026 г. Настоящие условия регулируют использование вами сайта YES Coffee и оформление заказов у нас. Используя этот сайт или оформляя заказ, вы соглашаетесь с указанными ниже условиями.",
+    "th": "อัปเดตล่าสุด: สิงหาคม 2026 ข้อกำหนดนี้ควบคุมการใช้งานเว็บไซต์ YES Coffee และการสั่งซื้อของคุณกับเรา การใช้เว็บไซต์นี้หรือการสั่งซื้อถือว่าคุณยอมรับข้อกำหนดด้านล่างนี้"
+  },
+  "YES Coffee is a specialty coffee roastery based in Rawai, Phuket, Thailand, sourcing beans from Northern Thailand. These Terms of Service set out the conditions under which you may use our website and place orders with us. If you do not agree with these terms, please do not use our website or services.": {
+    "ko": "YES Coffee는 태국 푸켓 라와이에 위치한 스페셜티 커피 로스터리로, 태국 북부에서 원두를 소싱합니다. 본 이용약관은 저희 웹사이트를 이용하고 주문하실 수 있는 조건을 규정합니다. 본 약관에 동의하지 않으시는 경우, 저희 웹사이트나 서비스를 이용하지 말아 주시기 바랍니다.",
+    "zh": "YES Coffee 是一家位于泰国普吉岛拉威的精品咖啡烘焙工坊，咖啡豆采购自泰国北部。本服务条款规定了您使用我们网站及下单的条件。如果您不同意本条款，请勿使用我们的网站或服务。",
+    "ru": "YES Coffee — это спешелти-кофейня и обжарочный цех, расположенные в Раваи, Пхукет, Таиланд, закупающие зерно в Северном Таиланде. Настоящие Условия использования определяют условия, на которых вы можете пользоваться нашим сайтом и оформлять заказы. Если вы не согласны с этими условиями, пожалуйста, не используйте наш сайт или услуги.",
+    "th": "YES Coffee คือโรงคั่วกาแฟสเปเชียลตี้ตั้งอยู่ที่หาดราไวย์ จังหวัดภูเก็ต ประเทศไทย โดยคัดสรรเมล็ดกาแฟจากภาคเหนือของไทย ข้อกำหนดการใช้งานนี้กำหนดเงื่อนไขการใช้เว็บไซต์และการสั่งซื้อกับเรา หากคุณไม่ยอมรับข้อกำหนดเหล่านี้ กรุณางดใช้เว็บไซต์หรือบริการของเรา"
+  },
+  "Using This Website": {
+    "ko": "웹사이트 이용",
+    "zh": "网站使用",
+    "ru": "Использование сайта",
+    "th": "การใช้งานเว็บไซต์นี้"
+  },
+  "You agree to use this website only for lawful purposes and in a way that does not infringe the rights of others or restrict their use of the site. You must not attempt to interfere with the proper functioning of the website or access it through means not intentionally made available by us.": {
+    "ko": "귀하는 본 웹사이트를 합법적인 목적으로만, 그리고 타인의 권리를 침해하거나 사이트 이용을 방해하지 않는 방식으로 이용하는 데 동의합니다. 웹사이트의 정상적인 작동을 방해하거나, 저희가 의도적으로 제공하지 않은 방식으로 접근을 시도해서는 안 됩니다.",
+    "zh": "您同意仅将本网站用于合法目的，且不得侵犯他人权利或妨碍他人使用本网站。您不得试图干扰网站的正常运作，也不得通过我们未特意提供的方式访问本网站。",
+    "ru": "Вы соглашаетесь использовать этот сайт только в законных целях и таким образом, чтобы не нарушать права других лиц и не ограничивать их использование сайта. Вы не должны пытаться нарушать нормальную работу сайта или получать к нему доступ способами, не предусмотренными нами намеренно.",
+    "th": "คุณตกลงที่จะใช้เว็บไซต์นี้เพื่อวัตถุประสงค์ที่ชอบด้วยกฎหมายเท่านั้น และในลักษณะที่ไม่ละเมิดสิทธิของผู้อื่นหรือขัดขวางการใช้งานเว็บไซต์ของผู้อื่น คุณต้องไม่พยายามรบกวนการทำงานปกติของเว็บไซต์ หรือเข้าถึงเว็บไซต์ด้วยวิธีที่เราไม่ได้จัดเตรียมไว้อย่างตั้งใจ"
+  },
+  "Products & Orders": {
+    "ko": "상품 및 주문",
+    "zh": "产品与订单",
+    "ru": "Товары и заказы",
+    "th": "สินค้าและการสั่งซื้อ"
+  },
+  "Orders are submitted through our email-based Request to Order process. Submitting a request does not guarantee availability or acceptance of your order. We reserve the right to limit quantities, decline, or cancel a request at our discretion, and will notify you if this occurs.": {
+    "ko": "주문은 이메일 기반의 '주문 요청' 절차를 통해 제출됩니다. 요청을 제출한다고 해서 상품 재고나 주문 수락이 보장되는 것은 아닙니다. 저희는 자체 판단에 따라 수량을 제한하거나, 요청을 거절 또는 취소할 권리를 보유하며, 이 경우 안내해 드립니다.",
+    "zh": "订单通过我们基于邮件的“订购请求”流程提交。提交请求并不保证商品有货或订单被接受。我们保留自行决定限制数量、拒绝或取消请求的权利，如发生此情况将通知您。",
+    "ru": "Заказы оформляются через нашу заявку на заказ по электронной почте. Отправка заявки не гарантирует наличие товара или принятие вашего заказа. Мы оставляем за собой право ограничивать количество, отклонять или отменять заявку по своему усмотрению, уведомив вас об этом.",
+    "th": "คำสั่งซื้อจะถูกส่งผ่านกระบวนการ “คำขอสั่งซื้อ” ทางอีเมลของเรา การส่งคำขอไม่ได้เป็นการรับประกันว่าสินค้าจะมีพร้อมจำหน่ายหรือคำสั่งซื้อจะได้รับการยอมรับ เราขอสงวนสิทธิ์ในการจำกัดจำนวน ปฏิเสธ หรือยกเลิกคำขอตามดุลยพินิจของเรา และจะแจ้งให้คุณทราบหากเกิดกรณีดังกล่าว"
+  },
+  "Payments": {
+    "ko": "결제",
+    "zh": "付款",
+    "ru": "Оплата",
+    "th": "การชำระเงิน"
+  },
+  "Pricing for our coffee is listed on each product page and is subject to change without notice. Payment terms and methods will be confirmed with you directly once an order request has been reviewed and accepted.": {
+    "ko": "커피 가격은 각 상품 페이지에 게시되며 사전 통지 없이 변경될 수 있습니다. 결제 조건과 방법은 주문 요청 검토 및 승인 후 개별적으로 안내해 드립니다.",
+    "zh": "我们咖啡的价格标示于各产品页面，可能随时变更，恕不另行通知。付款条款与方式将在订购请求经审核并被接受后与您直接确认。",
+    "ru": "Цены на наш кофе указаны на странице каждого товара и могут изменяться без предварительного уведомления. Условия и способы оплаты будут согласованы с вами напрямую после рассмотрения и принятия заявки на заказ.",
+    "th": "ราคากาแฟของเราแสดงอยู่ในหน้าสินค้าแต่ละรายการและอาจเปลี่ยนแปลงได้โดยไม่ต้องแจ้งให้ทราบล่วงหน้า เงื่อนไขและวิธีการชำระเงินจะได้รับการยืนยันกับคุณโดยตรงหลังจากคำขอสั่งซื้อได้รับการตรวจสอบและยอมรับแล้ว"
+  },
+  "Shipping arrangements, timelines, and costs will be communicated to you once your order is confirmed. We are not responsible for delays caused by carriers, customs, or other circumstances beyond our reasonable control.": {
+    "ko": "배송 방법, 소요 기간, 비용은 주문 확정 후 안내해 드립니다. 운송사, 통관, 또는 저희의 합리적인 통제 범위를 벗어난 사유로 인한 지연에 대해서는 책임지지 않습니다.",
+    "zh": "配送安排、时间与费用将在您的订单确认后告知。对于因承运商、海关或其他超出我们合理控制范围的情况所导致的延误，我们概不负责。",
+    "ru": "Условия доставки, сроки и стоимость будут сообщены вам после подтверждения заказа. Мы не несём ответственности за задержки, вызванные перевозчиками, таможней или иными обстоятельствами вне нашего разумного контроля.",
+    "th": "รายละเอียดการจัดส่ง กำหนดเวลา และค่าใช้จ่ายจะแจ้งให้ทราบเมื่อคำสั่งซื้อของคุณได้รับการยืนยันแล้ว เราไม่รับผิดชอบต่อความล่าช้าที่เกิดจากผู้ให้บริการขนส่ง ศุลกากร หรือสถานการณ์อื่นที่อยู่นอกเหนือการควบคุมตามสมควรของเรา"
+  },
+  "Returns": {
+    "ko": "반품",
+    "zh": "退货",
+    "ru": "Возврат",
+    "th": "การคืนสินค้า"
+  },
+  "If there is an issue with your order, please contact us within a reasonable time of receiving it so we can make things right. Given the perishable nature of coffee, returns are handled on a case-by-case basis.": {
+    "ko": "주문에 문제가 있으신 경우, 수령 후 합리적인 기간 내에 문의해 주시면 신속히 해결해 드리겠습니다. 커피는 신선식품의 특성상 반품은 사안별로 개별 처리됩니다.",
+    "zh": "如您的订单出现问题，请在收到商品后的合理时间内联系我们，以便我们妥善处理。鉴于咖啡易变质的特性，退货将根据具体情况逐一处理。",
+    "ru": "Если с вашим заказом возникла проблема, пожалуйста, свяжитесь с нами в разумный срок после получения, чтобы мы могли всё исправить. Учитывая скоропортящийся характер кофе, возвраты рассматриваются индивидуально.",
+    "th": "หากคำสั่งซื้อของคุณมีปัญหา กรุณาติดต่อเราภายในระยะเวลาที่เหมาะสมหลังจากได้รับสินค้า เพื่อให้เราสามารถแก้ไขให้ถูกต้อง เนื่องจากกาแฟเป็นสินค้าที่เสื่อมสภาพได้ การคืนสินค้าจะพิจารณาเป็นรายกรณีไป"
+  },
+  "Intellectual Property": {
+    "ko": "지적재산권",
+    "zh": "知识产权",
+    "ru": "Интеллектуальная собственность",
+    "th": "ทรัพย์สินทางปัญญา"
+  },
+  "All content on this website, including text, images, and the YES Coffee and Dream Canvas names and marks, is the property of YES Coffee or its licensors and is protected by applicable intellectual property laws. You may not reproduce or use this content without our prior written permission.": {
+    "ko": "텍스트, 이미지, YES Coffee 및 Dream Canvas의 명칭·상표를 포함한 본 웹사이트의 모든 콘텐츠는 YES Coffee 또는 그 라이선스 제공자의 소유이며, 관련 지적재산권법에 의해 보호됩니다. 사전 서면 동의 없이 본 콘텐츠를 복제하거나 사용할 수 없습니다.",
+    "zh": "本网站上的所有内容，包括文字、图片以及 YES Coffee 与 Dream Canvas 的名称与标识，均为 YES Coffee 或其授权方所有，并受相关知识产权法保护。未经我们事先书面许可，不得复制或使用本内容。",
+    "ru": "Весь контент на этом сайте, включая текст, изображения, а также названия и знаки YES Coffee и Dream Canvas, является собственностью YES Coffee или её лицензиаров и защищён применимым законодательством об интеллектуальной собственности. Вы не можете воспроизводить или использовать этот контент без нашего предварительного письменного разрешения.",
+    "th": "เนื้อหาทั้งหมดบนเว็บไซต์นี้ รวมถึงข้อความ รูปภาพ และชื่อ/เครื่องหมายของ YES Coffee และ Dream Canvas เป็นทรัพย์สินของ YES Coffee หรือผู้ให้อนุญาต และได้รับความคุ้มครองตามกฎหมายทรัพย์สินทางปัญญาที่เกี่ยวข้อง คุณไม่สามารถทำซ้ำหรือใช้เนื้อหานี้โดยไม่ได้รับอนุญาตเป็นลายลักษณ์อักษรจากเราล่วงหน้า"
+  },
+  "Limitation of Liability": {
+    "ko": "책임의 제한",
+    "zh": "责任限制",
+    "ru": "Ограничение ответственности",
+    "th": "ข้อจำกัดความรับผิด"
+  },
+  "To the fullest extent permitted by law, YES Coffee shall not be liable for any indirect, incidental, or consequential damages arising from your use of this website or your purchase of our products. Our total liability for any claim shall not exceed the amount you paid for the relevant order.": {
+    "ko": "법이 허용하는 최대 범위 내에서, YES Coffee는 본 웹사이트 이용 또는 상품 구매로 인해 발생하는 간접적, 부수적, 결과적 손해에 대해 책임을 지지 않습니다. 어떠한 청구에 대해서도 저희의 총 책임 범위는 해당 주문에 대해 지불하신 금액을 초과하지 않습니다.",
+    "zh": "在法律允许的最大范围内，YES Coffee 对因您使用本网站或购买我们产品而产生的任何间接、附带或后果性损害概不负责。对于任何索赔，我们的总责任不超过您为相关订单所支付的金额。",
+    "ru": "В максимально допустимой законом степени YES Coffee не несёт ответственности за любые косвенные, случайные или последующие убытки, возникшие в результате использования вами этого сайта или приобретения наших товаров. Наша общая ответственность по любой претензии не превышает сумму, уплаченную вами за соответствующий заказ.",
+    "th": "ตามขอบเขตสูงสุดที่กฎหมายอนุญาต YES Coffee จะไม่รับผิดต่อความเสียหายทางอ้อม อุบัติเหตุ หรือความเสียหายที่ตามมาอันเกิดจากการใช้เว็บไซต์นี้หรือการซื้อสินค้าของเรา ความรับผิดรวมของเราต่อข้อเรียกร้องใด ๆ จะไม่เกินจำนวนเงินที่คุณชำระสำหรับคำสั่งซื้อที่เกี่ยวข้อง"
+  },
+  "If you have questions about these Terms of Service, please reach us at": {
+    "ko": "본 이용약관에 대해 궁금한 점이 있으시면 아래로 문의해 주세요:",
+    "zh": "如果您对本服务条款有任何疑问，请联系我们：",
+    "ru": "Если у вас есть вопросы об этих Условиях использования, свяжитесь с нами:",
+    "th": "หากคุณมีคำถามเกี่ยวกับข้อกำหนดการใช้งานนี้ กรุณาติดต่อเราที่"
+  },
+  "Coffee at a Glance": {
+    "ko": "커피 한눈에 보기",
+    "zh": "咖啡风味一览",
+    "ru": "Кофе с первого взгляда",
+    "th": "ภาพรวมของกาแฟ"
+  },
+  "Tasting Notes": {
+    "ko": "테이스팅 노트",
+    "zh": "风味笔记",
+    "ru": "Дегустационные ноты",
+    "th": "โน้ตรสชาติ"
+  },
+  "What you'll find in the cup.": {
+    "ko": "한 잔 속에서 느껴지는 맛",
+    "zh": "在这杯咖啡中，你会尝到。",
+    "ru": "Что вы почувствуете в чашке.",
+    "th": "สิ่งที่คุณจะได้สัมผัสในแก้ว"
+  },
+  "Body": {
+    "ko": "바디감",
+    "zh": "醇厚度",
+    "ru": "Тело",
+    "th": "บอดี้"
+  },
+  "Sweetness": {
+    "ko": "단맛",
+    "zh": "甜感",
+    "ru": "Сладость",
+    "th": "ความหวาน"
+  },
+  "Acidity": {
+    "ko": "산미",
+    "zh": "酸度",
+    "ru": "Кислотность",
+    "th": "ความเปรี้ยว"
+  },
+  "Roast": {
+    "ko": "로스팅 강도",
+    "zh": "烘焙度",
+    "ru": "Обжарка",
+    "th": "ระดับการคั่ว"
+  },
+  "Crafted in Thailand": {
+    "ko": "태국에서 만듭니다",
+    "zh": "匠心制作于泰国",
+    "ru": "Создано в Таиланде",
+    "th": "สร้างสรรค์ในประเทศไทย"
+  },
+  "Thoughtfully sourced.<br>Carefully roasted.": {
+    "ko": "정성껏 소싱하고,<br>세심하게 로스팅합니다.",
+    "zh": "用心甄选，<br>细致烘焙。",
+    "ru": "Тщательно отобрано.<br>Бережно обжарено.",
+    "th": "คัดสรรอย่างพิถีพิถัน<br>คั่วอย่างใส่ใจ"
+  },
+  "Thoughtfully sourced from Northern Thailand and roasted with care to bring warmth to everyday moments.": {
+    "ko": "태국 북부에서 정성껏 소싱하고, 일상의 순간에 따뜻함을 더하고자 정성스럽게 로스팅했습니다.",
+    "zh": "精选自泰国北部，用心烘焙，为日常时刻带来温暖。",
+    "ru": "Тщательно отобрано в Северном Таиланде и бережно обжарено, чтобы согреть повседневные моменты.",
+    "th": "คัดสรรอย่างพิถีพิถันจากภาคเหนือของไทย และคั่วด้วยความใส่ใจเพื่อเติมความอบอุ่นให้ทุกช่วงเวลาในชีวิตประจำวัน"
+  },
+  "Explore More": {
+    "ko": "더 둘러보기",
+    "zh": "探索更多",
+    "ru": "Смотреть ещё",
+    "th": "สำรวจเพิ่มเติม"
+  },
+  "You might also enjoy.": {
+    "ko": "이런 커피도 좋아하실 거예요.",
+    "zh": "您可能也会喜欢。",
+    "ru": "Вам может понравиться и это.",
+    "th": "คุณอาจชอบกาแฟเหล่านี้ด้วย"
+  },
+  "Request to Order": {
+    "ko": "주문 요청하기",
+    "zh": "申请订购",
+    "ru": "Оформить заявку на заказ",
+    "th": "ขอสั่งซื้อ"
+  },
+  "Interested in this coffee?<br>Email us to check availability, shipping options, or place an order.": {
+    "ko": "이 커피에 관심이 있으신가요?<br>재고 확인, 배송 옵션 문의, 주문은 이메일로 연락해 주세요.",
+    "zh": "对这款咖啡感兴趣吗？<br>请发邮件与我们联系，查询库存、配送方式或下单。",
+    "ru": "Заинтересовались этим кофе?<br>Напишите нам, чтобы узнать о наличии, вариантах доставки или оформить заказ.",
+    "th": "สนใจกาแฟตัวนี้ใช่ไหม?<br>อีเมลถึงเราเพื่อตรวจสอบสินค้าคงเหลือ ตัวเลือกการจัดส่ง หรือสั่งซื้อ"
+  },
+  "Selected": {
+    "ko": "선택 내역",
+    "zh": "已选",
+    "ru": "Выбрано",
+    "th": "ที่เลือก"
+  },
+  "Taxes included.<br>Shipping calculated separately.": {
+    "ko": "세금 포함가입니다.<br>배송비는 별도로 안내드립니다.",
+    "zh": "含税价格。<br>运费另计。",
+    "ru": "Цена включает налоги.<br>Стоимость доставки рассчитывается отдельно.",
+    "th": "ราคานี้รวมภาษีแล้ว<br>ค่าจัดส่งคำนวณแยกต่างหาก"
+  },
+  "Complete the form below and we'll review your order and contact you with shipping and payment details.": {
+    "ko": "아래 양식을 작성해 주시면 주문 내용을 검토한 뒤 배송 및 결제 안내를 드리겠습니다.",
+    "zh": "请填写以下表单，我们会审核您的订单，并与您联系配送与付款详情。",
+    "ru": "Заполните форму ниже, и мы рассмотрим ваш заказ и свяжемся с вами по поводу доставки и оплаты.",
+    "th": "กรอกแบบฟอร์มด้านล่าง แล้วเราจะตรวจสอบคำสั่งซื้อของคุณและติดต่อกลับพร้อมรายละเอียดการจัดส่งและการชำระเงิน"
+  },
+  "Once your payment is confirmed, we'll carefully prepare your order for shipment.": {
+    "ko": "결제가 확인되면, 주문하신 상품을 정성껏 준비해 배송해 드립니다.",
+    "zh": "付款确认后，我们将悉心为您准备订单并安排发货。",
+    "ru": "После подтверждения оплаты мы бережно подготовим ваш заказ к отправке.",
+    "th": "เมื่อยืนยันการชำระเงินแล้ว เราจะเตรียมคำสั่งซื้อของคุณอย่างพิถีพิถันเพื่อจัดส่ง"
+  },
+  "We select coffee that meets our freshness standards, ensuring every order is shipped with exceptional quality.": {
+    "ko": "저희 신선도 기준을 충족하는 커피만을 선별하여, 모든 주문이 최상의 품질로 배송되도록 합니다.",
+    "zh": "我们只挑选符合新鲜度标准的咖啡，确保每一份订单都以卓越品质寄出。",
+    "ru": "Мы отбираем кофе, соответствующий нашим стандартам свежести, чтобы каждый заказ отправлялся исключительно высокого качества.",
+    "th": "เราคัดเลือกกาแฟที่ตรงตามมาตรฐานความสดใหม่ของเรา เพื่อให้มั่นใจว่าทุกคำสั่งซื้อจัดส่งด้วยคุณภาพที่ยอดเยี่ยม"
+  },
+  "We typically ship coffee roasted within 7 days to ensure the best possible freshness.": {
+    "ko": "최상의 신선도를 위해 통상 로스팅 후 7일 이내의 커피를 배송해 드립니다.",
+    "zh": "为确保最佳新鲜度，我们通常寄出烘焙后7天以内的咖啡。",
+    "ru": "Обычно мы отправляем кофе, обжаренный не более 7 дней назад, чтобы гарантировать наилучшую свежесть.",
+    "th": "โดยทั่วไปเราจะจัดส่งกาแฟที่คั่วภายใน 7 วัน เพื่อความสดใหม่ที่ดีที่สุด"
+  },
+  "Signature Blend · 100% Arabica": {
+    "ko": "시그니처 블렌드 · 100% 아라비카",
+    "zh": "招牌拼配 · 100% 阿拉比卡",
+    "ru": "Фирменный бленд · 100% арабика",
+    "th": "ซิกเนเจอร์เบลนด์ · อาราบิก้า 100%"
+  },
+  "Balanced and velvety with notes of dark chocolate, apple, and spice.": {
+    "ko": "다크 초콜릿, 사과, 스파이스 향이 어우러진 균형 잡히고 벨벳처럼 부드러운 맛.",
+    "zh": "均衡丝滑，带有黑巧克力、苹果与香料的风味。",
+    "ru": "Сбалансированный, бархатистый, с нотами тёмного шоколада, яблока и специй.",
+    "th": "สมดุลนุ่มนวลดั่งกำมะหยี่ พร้อมกลิ่นดาร์กช็อกโกแลต แอปเปิ้ล และเครื่องเทศ"
+  },
+  "A balanced and velvety everyday blend.": {
+    "ko": "균형 잡히고 부드러운 데일리 블렌드",
+    "zh": "均衡丝滑的日常拼配咖啡。",
+    "ru": "Сбалансированный бархатистый бленд на каждый день.",
+    "th": "เบลนด์สมดุลนุ่มนวลสำหรับทุกวัน"
+  },
+  "Dark Chocolate": {
+    "ko": "다크 초콜릿",
+    "zh": "黑巧克力",
+    "ru": "Тёмный шоколад",
+    "th": "ดาร์กช็อกโกแลต"
+  },
+  "Rich sweetness with a lingering finish.": {
+    "ko": "진한 단맛이 길게 여운으로 남습니다.",
+    "zh": "浓郁甜感，余韵悠长。",
+    "ru": "Насыщенная сладость с долгим послевкусием.",
+    "th": "ความหวานเข้มข้นติดปลายลิ้นยาวนาน"
+  },
+  "Apple": {
+    "ko": "사과",
+    "zh": "苹果",
+    "ru": "Яблоко",
+    "th": "แอปเปิ้ล"
+  },
+  "A gentle brightness that brings clarity.": {
+    "ko": "산뜻한 화사함이 맛을 또렷하게 만들어줍니다.",
+    "zh": "轻盈明亮，带来清晰的口感层次。",
+    "ru": "Мягкая яркость, придающая чистоту вкусу.",
+    "th": "ความสดใสอ่อน ๆ ที่เพิ่มความกระจ่างให้รสชาติ"
+  },
+  "Floral": {
+    "ko": "플로럴",
+    "zh": "花香",
+    "ru": "Цветочные ноты",
+    "th": "กลิ่นดอกไม้"
+  },
+  "Elegant aroma with a delicate finish.": {
+    "ko": "우아한 향과 섬세한 여운.",
+    "zh": "优雅香气，收尾细腻。",
+    "ru": "Элегантный аромат с деликатным финишем.",
+    "th": "กลิ่นหอมสง่างามพร้อมรสชาติละเมียดในตอนท้าย"
+  },
+  "Spice": {
+    "ko": "스파이스",
+    "zh": "香料",
+    "ru": "Специи",
+    "th": "เครื่องเทศ"
+  },
+  "Soft warmth that completes the cup.": {
+    "ko": "은은한 온기가 한 잔을 완성합니다.",
+    "zh": "柔和的暖意，为这杯咖啡画上圆满句点。",
+    "ru": "Мягкое тепло, завершающее вкус чашки.",
+    "th": "ความอุ่นละมุนที่เติมเต็มรสชาติในแก้ว"
+  },
+  "Two ways to enjoy Y-Signature.": {
+    "ko": "Y-Signature를 즐기는 두 가지 방법",
+    "zh": "两种品味 Y-Signature 的方式。",
+    "ru": "Два способа насладиться Y-Signature.",
+    "th": "สองวิธีเพลิดเพลินกับ Y-Signature"
+  },
+  "Grind fine. Pull a slow, even shot. The chocolate notes develop beautifully with a slight rest after extraction.": {
+    "ko": "곱게 분쇄하세요. 천천히 일정하게 추출하고, 추출 후 잠시 두면 초콜릿 향이 아름답게 피어납니다.",
+    "zh": "细研磨。缓慢均匀地萃取，萃取后稍作静置，巧克力风味会更加迷人地展现。",
+    "ru": "Тонкий помол. Извлекайте медленно и равномерно — шоколадные ноты прекрасно раскрываются после небольшой паузы.",
+    "th": "บดละเอียด สกัดช้า ๆ อย่างสม่ำเสมอ กลิ่นช็อกโกแลตจะพัฒนาได้อย่างสวยงามหากพักไว้สักครู่หลังสกัด"
+  },
+  "Bloom with 30ml for 30 seconds. Pour in slow circles. The apple and floral notes open up as the cup cools.": {
+    "ko": "30ml로 30초간 블루밍한 뒤 천천히 원을 그리며 부어주세요. 식으면서 사과와 플로럴 향이 더 풍성해집니다.",
+    "zh": "用30毫升水闷蒸30秒，缓慢绕圈注水。随着咖啡冷却，苹果与花香会更加绽放。",
+    "ru": "Блум 30 мл в течение 30 секунд, лейте медленными кругами. Яблочные и цветочные ноты раскрываются по мере остывания.",
+    "th": "บลูมด้วยน้ำ 30 มล. เป็นเวลา 30 วินาที รินน้ำเป็นวงกลมช้า ๆ กลิ่นแอปเปิ้ลและดอกไม้จะยิ่งโดดเด่นขึ้นเมื่อกาแฟเย็นลง"
+  },
+  "Dark Roast · 100% Arabica": {
+    "ko": "다크 로스트 · 100% 아라비카",
+    "zh": "深度烘焙 · 100% 阿拉比卡",
+    "ru": "Тёмная обжарка · 100% арабика",
+    "th": "คั่วเข้ม · อาราบิก้า 100%"
+  },
+  "A rich, full-bodied espresso blend.": {
+    "ko": "진하고 묵직한 에스프레소 블렌드",
+    "zh": "浓郁醇厚的意式浓缩拼配。",
+    "ru": "Насыщенный, плотный эспрессо-бленд.",
+    "th": "เบลนด์เอสเพรสโซเข้มข้นและเต็มรสชาติ"
+  },
+  "Deep and rich, the defining note in every cup.": {
+    "ko": "깊고 진한, 이 커피를 대표하는 향미.",
+    "zh": "深邃浓郁，是每一杯的标志性风味。",
+    "ru": "Глубокий и насыщенный — определяющая нота в каждой чашке.",
+    "th": "เข้มข้นลึกล้ำ เป็นรสชาติที่โดดเด่นในทุกแก้ว"
+  },
+  "Nuts": {
+    "ko": "견과류",
+    "zh": "坚果",
+    "ru": "Орехи",
+    "th": "ถั่ว"
+  },
+  "Warm and toasted, adding body to the cup.": {
+    "ko": "따뜻하고 고소한 풍미가 바디감을 더합니다.",
+    "zh": "温暖烘烤感，为口感增添醇厚度。",
+    "ru": "Тёплые, поджаренные ноты, добавляющие плотности телу.",
+    "th": "กลิ่นอบอุ่นคั่วหอม เพิ่มความเข้มข้นให้บอดี้"
+  },
+  "Caramel": {
+    "ko": "카라멜",
+    "zh": "焦糖",
+    "ru": "Карамель",
+    "th": "คาราเมล"
+  },
+  "Rounded sweetness that lingers on the finish.": {
+    "ko": "둥글게 감싸는 단맛이 여운으로 남습니다.",
+    "zh": "圆润甜感，余韵绵长。",
+    "ru": "Округлая сладость, задерживающаяся в послевкусии.",
+    "th": "ความหวานกลมกล่อมที่ติดปลายลิ้น"
+  },
+  "Brown Sugar": {
+    "ko": "흑설탕",
+    "zh": "红糖",
+    "ru": "Коричневый сахар",
+    "th": "น้ำตาลทรายแดง"
+  },
+  "A warm sweetness that lingers on the finish.": {
+    "ko": "따뜻한 단맛이 오래도록 여운으로 남습니다.",
+    "zh": "温暖的甜感，久久萦绕。",
+    "ru": "Тёплая сладость, остающаяся в послевкусии.",
+    "th": "ความหวานอบอุ่นที่ติดปลายลิ้นยาวนาน"
+  },
+  "Grind fine. Pull a strong, bold shot. The chocolate and caramel notes come forward with a rich crema.": {
+    "ko": "곱게 분쇄하세요. 진하고 강하게 추출하면 크레마와 함께 초콜릿, 카라멜 향이 도드라집니다.",
+    "zh": "细研磨。萃取浓烈的一份，巧克力与焦糖风味在丰厚的克丽玛中充分展现。",
+    "ru": "Тонкий помол. Извлекайте крепкий, насыщенный шот — шоколадные и карамельные ноты раскрываются на фоне густой крема.",
+    "th": "บดละเอียด สกัดช็อตที่เข้มข้นหนักแน่น กลิ่นช็อกโกแลตและคาราเมลจะโดดเด่นพร้อมครีม่าที่เข้มข้น"
+  },
+  "Fill the base with hot water and pack the grounds gently. Brew over medium heat until it stops bubbling.": {
+    "ko": "베이스에 뜨거운 물을 채우고 원두를 가볍게 다져주세요. 중불에서 보글거림이 멈출 때까지 끓여주세요.",
+    "zh": "底座注满热水，轻轻压实咖啡粉。用中火加热，直至不再冒泡为止。",
+    "ru": "Наполните нижнюю часть горячей водой и слегка утрамбуйте молотый кофе. Готовьте на среднем огне, пока не прекратится бульканье.",
+    "th": "เติมน้ำร้อนที่ฐานและอัดผงกาแฟเบา ๆ ต้มด้วยไฟปานกลางจนกว่าฟองอากาศจะหยุด"
+  },
+  "Two ways to enjoy Espresso Roast.": {
+    "ko": "Espresso Roast를 즐기는 두 가지 방법",
+    "zh": "两种品味 Espresso Roast 的方式。",
+    "ru": "Два способа насладиться Espresso Roast.",
+    "th": "สองวิธีเพลิดเพลินกับ Espresso Roast"
+  },
+  "Moka Pot": {
+    "ko": "모카포트",
+    "zh": "摩卡壶",
+    "ru": "Гейзерная кофеварка",
+    "th": "หม้อต้มโมก้า"
+  },
+  "Honey Processed · 100% Arabica": {
+    "ko": "허니 프로세스 · 100% 아라비카",
+    "zh": "蜜处理 · 100% 阿拉比卡",
+    "ru": "Хани-процесс · 100% арабика",
+    "th": "กระบวนการฮันนี่ · อาราบิก้า 100%"
+  },
+  "A naturally sweet, floral everyday cup.": {
+    "ko": "자연스러운 단맛과 플로럴 향의 데일리 커피",
+    "zh": "天然香甜、花香四溢的日常咖啡。",
+    "ru": "Натурально сладкая, цветочная чашка на каждый день.",
+    "th": "กาแฟหวานธรรมชาติกลิ่นดอกไม้สำหรับทุกวัน"
+  },
+  "Cocoa": {
+    "ko": "코코아",
+    "zh": "可可",
+    "ru": "Какао",
+    "th": "โกโก้"
+  },
+  "Rounded and mellow, adding gentle depth.": {
+    "ko": "둥글고 부드러운 풍미가 은은한 깊이를 더합니다.",
+    "zh": "圆润柔和，增添淡淡的深度。",
+    "ru": "Округлые, мягкие ноты, добавляющие деликатную глубину.",
+    "th": "กลมกล่อมนุ่มนวล เพิ่มความลึกซึ้งอย่างอ่อนโยน"
+  },
+  "Roasted Nuts": {
+    "ko": "로스티드 넛츠",
+    "zh": "烤坚果",
+    "ru": "Жареные орехи",
+    "th": "ถั่วคั่ว"
+  },
+  "Warm and smooth, rounding out the body.": {
+    "ko": "따뜻하고 부드러운 풍미가 바디감을 완성합니다.",
+    "zh": "温暖顺滑，让口感更加圆润。",
+    "ru": "Тёплые, гладкие ноты, придающие телу округлость.",
+    "th": "อุ่นและนุ่มนวล ช่วยเติมเต็มบอดี้ให้กลมกล่อม"
+  },
+  "A delicate aroma carried through the finish.": {
+    "ko": "섬세한 향이 여운까지 이어집니다.",
+    "zh": "细腻香气，贯穿至余韵。",
+    "ru": "Деликатный аромат, сохраняющийся до самого финиша.",
+    "th": "กลิ่นหอมละเมียดที่คงอยู่จนถึงรสชาติปลายทาง"
+  },
+  "Honey": {
+    "ko": "허니",
+    "zh": "蜂蜜",
+    "ru": "Мёд",
+    "th": "น้ำผึ้ง"
+  },
+  "Natural sweetness carried through the whole cup.": {
+    "ko": "자연스러운 단맛이 한 잔 전체에 걸쳐 이어집니다.",
+    "zh": "天然甜感贯穿整杯咖啡。",
+    "ru": "Натуральная сладость, ощущаемая на протяжении всей чашки.",
+    "th": "ความหวานธรรมชาติที่คงอยู่ตลอดทั้งแก้ว"
+  },
+  "Bloom with 30ml for 30 seconds. Pour in slow circles. The honey sweetness rounds out as the cup cools.": {
+    "ko": "30ml로 30초간 블루밍한 뒤 천천히 원을 그리며 부어주세요. 식으면서 허니의 단맛이 더욱 둥글어집니다.",
+    "zh": "用30毫升水闷蒸30秒，缓慢绕圈注水。随着咖啡冷却，蜂蜜般的甜感会更加圆润。",
+    "ru": "Блум 30 мл в течение 30 секунд, лейте медленными кругами. Медовая сладость становится более округлой по мере остывания.",
+    "th": "บลูมด้วยน้ำ 30 มล. เป็นเวลา 30 วินาที รินน้ำเป็นวงกลมช้า ๆ ความหวานคล้ายน้ำผึ้งจะกลมกล่อมขึ้นเมื่อกาแฟเย็นลง"
+  },
+  "Use a medium grind. Let the machine do the work — the floral and stone fruit notes shine through.": {
+    "ko": "중간 굵기로 분쇄하세요. 기계에 맡기면 플로럴 향과 씨과일 향이 은은하게 드러납니다.",
+    "zh": "使用中度研磨。交给机器完成萃取——花香与核果风味会自然展现。",
+    "ru": "Средний помол. Доверьтесь машине — цветочные ноты и нотки косточковых фруктов проявятся сами.",
+    "th": "บดขนาดกลาง ปล่อยให้เครื่องทำงาน กลิ่นดอกไม้และผลไม้เนื้อแข็งจะโดดเด่นขึ้นมา"
+  },
+  "Two ways to enjoy Honey Process.": {
+    "ko": "Honey Process를 즐기는 두 가지 방법",
+    "zh": "两种品味 Honey Process 的方式。",
+    "ru": "Два способа насладиться Honey Process.",
+    "th": "สองวิธีเพลิดเพลินกับ Honey Process"
+  },
+  "Drip Brew": {
+    "ko": "드립 브루",
+    "zh": "滴滤咖啡机",
+    "ru": "Капельная кофеварка",
+    "th": "เครื่องดริป"
+  },
+  "Single Origin · 100% Arabica": {
+    "ko": "싱글 오리진 · 100% 아라비카",
+    "zh": "单一产地 · 100% 阿拉比卡",
+    "ru": "Моносорт · 100% арабика",
+    "th": "ซิงเกิลออริจิน · อาราบิก้า 100%"
+  },
+  "A bright, refined everyday cup.": {
+    "ko": "화사하고 세련된 데일리 커피",
+    "zh": "明亮细腻的日常咖啡。",
+    "ru": "Яркая, утончённая чашка на каждый день.",
+    "th": "กาแฟสดใสประณีตสำหรับทุกวัน"
+  },
+  "Lime": {
+    "ko": "라임",
+    "zh": "青柠",
+    "ru": "Лайм",
+    "th": "มะนาว"
+  },
+  "Crisp and juicy, carrying the brightness.": {
+    "ko": "산뜻하고 과즙 같은 맛이 화사함을 이끕니다.",
+    "zh": "清脆多汁，带来明亮的风味。",
+    "ru": "Свежий и сочный, несущий яркость вкуса.",
+    "th": "สดชื่นฉ่ำ นำพาความสดใสมาให้"
+  },
+  "A bright floral note that opens the cup.": {
+    "ko": "화사한 꽃향이 첫맛을 열어줍니다.",
+    "zh": "明亮的花香，为整杯咖啡拉开序幕。",
+    "ru": "Яркая цветочная нота, открывающая вкус чашки.",
+    "th": "กลิ่นดอกไม้สดใสที่เปิดรับรสชาติแรก"
+  },
+  "A rounded depth beneath the brightness.": {
+    "ko": "화사함 아래 둥글게 깔린 깊이감.",
+    "zh": "明亮之下，是圆润的深度。",
+    "ru": "Округлая глубина под яркостью вкуса.",
+    "th": "ความลึกกลมกล่อมที่ซ่อนอยู่ใต้ความสดใส"
+  },
+  "A gentle warmth that completes the finish.": {
+    "ko": "은은한 온기가 여운을 완성합니다.",
+    "zh": "柔和的暖意，为余韵画上句点。",
+    "ru": "Мягкое тепло, завершающее послевкусие.",
+    "th": "ความอุ่นละมุนที่เติมเต็มรสชาติปลายทาง"
+  },
+  "Bloom with 30ml for 30 seconds. Pour in slow circles. The floral and spice notes brighten as it cools.": {
+    "ko": "30ml로 30초간 블루밍한 뒤 천천히 원을 그리며 부어주세요. 식으면서 플로럴과 스파이스 향이 더 화사해집니다.",
+    "zh": "用30毫升水闷蒸30秒，缓慢绕圈注水。随着冷却，花香与香料风味会更加明亮。",
+    "ru": "Блум 30 мл в течение 30 секунд, лейте медленными кругами. Цветочные и пряные ноты становятся ярче по мере остывания.",
+    "th": "บลูมด้วยน้ำ 30 มล. เป็นเวลา 30 วินาที รินน้ำเป็นวงกลมช้า ๆ กลิ่นดอกไม้และเครื่องเทศจะสดใสขึ้นเมื่อเย็นลง"
+  },
+  "Steep for one minute, stir gently, then press slowly. A clean cup with vibrant clarity.": {
+    "ko": "1분간 우린 뒤 가볍게 저어주고 천천히 눌러주세요. 맑고 또렷한 깔끔한 한 잔이 완성됩니다.",
+    "zh": "浸泡一分钟，轻轻搅拌，再缓慢下压。呈现清澈明亮的干净口感。",
+    "ru": "Настаивайте одну минуту, слегка перемешайте, затем медленно нажмите на поршень. Чистая чашка с яркой ясностью вкуса.",
+    "th": "แช่ไว้ 1 นาที คนเบา ๆ แล้วค่อย ๆ กด ได้กาแฟที่สะอาดและใสกระจ่าง"
+  },
+  "Two ways to enjoy Doi Chang.": {
+    "ko": "Doi Chang을 즐기는 두 가지 방법",
+    "zh": "两种品味 Doi Chang 的方式。",
+    "ru": "Два способа насладиться Doi Chang.",
+    "th": "สองวิธีเพลิดเพลินกับ Doi Chang"
+  },
+  "Single Origin · 100% Premium Peaberry": {
+    "ko": "싱글 오리진 · 100% 프리미엄 피베리",
+    "zh": "单一产地 · 100% 优质圆豆",
+    "ru": "Моносорт · 100% премиальная пиберри",
+    "th": "ซิงเกิลออริจิน · พีเบอร์รี่พรีเมียม 100%"
+  },
+  "A refined peaberry coffee with layered sweetness, bright citrus notes, and a silky finish.": {
+    "ko": "층층이 쌓인 단맛과 화사한 시트러스 향, 실키한 여운을 지닌 섬세한 피베리 커피.",
+    "zh": "精致的圆豆咖啡，层次丰富的甜感、明亮的柑橘香气，收尾丝滑。",
+    "ru": "Утончённый кофе пиберри с многослойной сладостью, яркими цитрусовыми нотами и шелковистым финишем.",
+    "th": "กาแฟพีเบอร์รี่ประณีตพร้อมความหวานหลายชั้น กลิ่นซิตรัสสดใส และรสชาตินุ่มนวลดั่งไหมในตอนท้าย"
+  },
+  "A velvety, balanced everyday cup.": {
+    "ko": "벨벳처럼 부드럽고 균형 잡힌 데일리 커피",
+    "zh": "丝滑均衡的日常咖啡。",
+    "ru": "Бархатистая, сбалансированная чашка на каждый день.",
+    "th": "กาแฟนุ่มนวลดั่งกำมะหยี่และสมดุลสำหรับทุกวัน"
+  },
+  "Vanilla": {
+    "ko": "바닐라",
+    "zh": "香草",
+    "ru": "Ваниль",
+    "th": "วานิลลา"
+  },
+  "A soft, creamy sweetness underneath.": {
+    "ko": "은은하고 크리미한 단맛이 바탕에 깔려 있습니다.",
+    "zh": "底蕴中透出柔和绵密的甜感。",
+    "ru": "Мягкая, кремовая сладость в основе.",
+    "th": "ความหวานนุ่มนวลคล้ายครีมที่ซ่อนอยู่ด้านล่าง"
+  },
+  "Rounded and mellow, adding depth.": {
+    "ko": "둥글고 부드러운 풍미가 깊이를 더합니다.",
+    "zh": "圆润柔和，增添深度。",
+    "ru": "Округлые, мягкие ноты, добавляющие глубины.",
+    "th": "กลมกล่อมนุ่มนวล เพิ่มความลึกให้รสชาติ"
+  },
+  "Citrus": {
+    "ko": "시트러스",
+    "zh": "柑橘",
+    "ru": "Цитрус",
+    "th": "ซิตรัส"
+  },
+  "Bright and juicy, lifting the cup.": {
+    "ko": "화사하고 과즙 같은 맛이 한 잔을 산뜻하게 끌어올립니다.",
+    "zh": "明亮多汁，为整杯咖啡增添活力。",
+    "ru": "Яркий и сочный, придающий чашке лёгкость.",
+    "th": "สดใสฉ่ำ ยกระดับรสชาติในแก้วให้สดชื่น"
+  },
+  "A delicate aroma with a silky finish.": {
+    "ko": "섬세한 향과 실키한 여운.",
+    "zh": "细腻香气，收尾丝滑。",
+    "ru": "Деликатный аромат с шелковистым финишем.",
+    "th": "กลิ่นหอมละเมียดพร้อมรสชาตินุ่มนวลดั่งไหมในตอนท้าย"
+  },
+  "Bloom with 30ml for 30 seconds. Pour in slow circles. The citrus and floral notes brighten as the cup cools.": {
+    "ko": "30ml로 30초간 블루밍한 뒤 천천히 원을 그리며 부어주세요. 식으면서 시트러스와 플로럴 향이 더 화사해집니다.",
+    "zh": "用30毫升水闷蒸30秒，缓慢绕圈注水。随着冷却，柑橘与花香会更加明亮。",
+    "ru": "Блум 30 мл в течение 30 секунд, лейте медленными кругами. Цитрусовые и цветочные ноты становятся ярче по мере остывания.",
+    "th": "บลูมด้วยน้ำ 30 มล. เป็นเวลา 30 วินาที รินน้ำเป็นวงกลมช้า ๆ กลิ่นซิตรัสและดอกไม้จะสดใสขึ้นเมื่อเย็นลง"
+  },
+  "Steep for one minute, stir gently, then press slowly. A silky, balanced cup with vibrant citrus.": {
+    "ko": "1분간 우린 뒤 가볍게 저어주고 천천히 눌러주세요. 실키하고 균형 잡힌 맛에 생동감 있는 시트러스가 어우러집니다.",
+    "zh": "浸泡一分钟，轻轻搅拌，再缓慢下压。丝滑均衡，柑橘风味鲜活。",
+    "ru": "Настаивайте одну минуту, слегка перемешайте, затем медленно нажмите на поршень. Шелковистая, сбалансированная чашка с яркими цитрусовыми нотами.",
+    "th": "แช่ไว้ 1 นาที คนเบา ๆ แล้วค่อย ๆ กด ได้กาแฟนุ่มนวลสมดุลพร้อมความสดใสของซิตรัส"
+  },
+  "Two ways to enjoy Peaberry.": {
+    "ko": "Peaberry를 즐기는 두 가지 방법",
+    "zh": "两种品味 Peaberry 的方式。",
+    "ru": "Два способа насладиться Peaberry.",
+    "th": "สองวิธีเพลิดเพลินกับ Peaberry"
+  },
+  "Aero Press": {
+    "ko": "에어로프레스",
+    "zh": "爱乐压",
+    "ru": "AeroPress",
+    "th": "แอโรเพรส"
+  },
+  "Vibrant and elegant with delicate sweetness, wild honey notes, and a clean finish.": {
+    "ko": "섬세한 단맛과 야생 꿀 향, 깔끔한 여운을 지닌 생동감 있고 우아한 맛.",
+    "zh": "活泼优雅，带有细腻甜感、野蜜香气与干净的收尾。",
+    "ru": "Яркий и элегантный, с деликатной сладостью, нотами дикого мёда и чистым финишем.",
+    "th": "สดใสสง่างาม พร้อมความหวานละเมียด กลิ่นน้ำผึ้งป่า และรสชาติสะอาดในตอนท้าย"
+  },
+  "A vibrant, clean everyday cup.": {
+    "ko": "생동감 있고 깔끔한 데일리 커피",
+    "zh": "活泼干净的日常咖啡。",
+    "ru": "Яркая, чистая чашка на каждый день.",
+    "th": "กาแฟสดใสสะอาดสำหรับทุกวัน"
+  },
+  "Cherry": {
+    "ko": "체리",
+    "zh": "樱桃",
+    "ru": "Вишня",
+    "th": "เชอร์รี่"
+  },
+  "A delicate sweetness carried through the finish.": {
+    "ko": "섬세한 단맛이 여운까지 이어집니다.",
+    "zh": "细腻甜感，贯穿至余韵。",
+    "ru": "Деликатная сладость, сохраняющаяся до финиша.",
+    "th": "ความหวานละเมียดที่คงอยู่จนถึงรสชาติปลายทาง"
+  },
+  "Wild Honey": {
+    "ko": "야생 꿀",
+    "zh": "野蜜",
+    "ru": "Дикий мёд",
+    "th": "น้ำผึ้งป่า"
+  },
+  "An elegant aroma with a clean finish.": {
+    "ko": "우아한 향과 깔끔한 여운.",
+    "zh": "优雅香气，收尾干净。",
+    "ru": "Элегантный аромат с чистым финишем.",
+    "th": "กลิ่นหอมสง่างามพร้อมรสชาติสะอาดในตอนท้าย"
+  },
+  "Bloom with 30ml for 30 seconds. Pour in slow circles. The wild honey and cherry notes brighten as it cools.": {
+    "ko": "30ml로 30초간 블루밍한 뒤 천천히 원을 그리며 부어주세요. 식으면서 야생 꿀과 체리 향이 더 화사해집니다.",
+    "zh": "用30毫升水闷蒸30秒，缓慢绕圈注水。随着冷却，野蜜与樱桃风味会更加明亮。",
+    "ru": "Блум 30 мл в течение 30 секунд, лейте медленными кругами. Ноты дикого мёда и вишни становятся ярче по мере остывания.",
+    "th": "บลูมด้วยน้ำ 30 มล. เป็นเวลา 30 วินาที รินน้ำเป็นวงกลมช้า ๆ กลิ่นน้ำผึ้งป่าและเชอร์รี่จะสดใสขึ้นเมื่อเย็นลง"
+  },
+  "Use a medium grind. Let the machine do the work — the cocoa and wild honey notes come through clean.": {
+    "ko": "중간 굵기로 분쇄하세요. 기계에 맡기면 코코아와 야생 꿀 향이 깔끔하게 드러납니다.",
+    "zh": "使用中度研磨。交给机器完成萃取——可可与野蜜风味会清晰展现。",
+    "ru": "Средний помол. Доверьтесь машине — ноты какао и дикого мёда проявятся чисто и ясно.",
+    "th": "บดขนาดกลาง ปล่อยให้เครื่องทำงาน กลิ่นโกโก้และน้ำผึ้งป่าจะโดดเด่นอย่างชัดเจน"
+  },
+  "Two ways to enjoy Omkoi.": {
+    "ko": "Omkoi를 즐기는 두 가지 방법",
+    "zh": "两种品味 Omkoi 的方式。",
+    "ru": "Два способа насладиться Omkoi.",
+    "th": "สองวิธีเพลิดเพลินกับ Omkoi"
+  },
+  "Home": {
+    "ko": "홈",
+    "zh": "首页",
+    "ru": "Главная",
+    "th": "หน้าแรก"
+  },
+  "About": {
+    "ko": "소개",
+    "zh": "关于我们",
+    "ru": "О нас",
+    "th": "เกี่ยวกับเรา"
+  },
+  "Visit": {
+    "ko": "방문하기",
+    "zh": "到店",
+    "ru": "Визит",
+    "th": "เยี่ยมชม"
+  },
+  "Fresh Selection": {
+    "ko": "신선한 선별",
+    "zh": "新鲜精选",
+    "ru": "Свежий отбор",
+    "th": "คัดสรรความสดใหม่"
+  },
+  "Every great cup begins with carefully selected green beans.": {
+    "ko": "훌륭한 한 잔은 정성껏 선별한 생두에서 시작됩니다.",
+    "zh": "每一杯好咖啡，都始于精心挑选的生豆。",
+    "ru": "Каждая отличная чашка начинается с тщательно отобранных зелёных зёрен.",
+    "th": "กาแฟดี ๆ ทุกแก้วเริ่มต้นจากเมล็ดกาแฟดิบที่คัดสรรอย่างพิถีพิถัน"
+  },
+  "Roastery Experience": {
+    "ko": "로스터리 경험",
+    "zh": "烘焙工坊体验",
+    "ru": "Опыт обжарочного цеха",
+    "th": "ประสบการณ์โรงคั่ว"
+  },
+  "Every batch is roasted with patience and precision in our roastery.": {
+    "ko": "모든 배치는 저희 로스터리에서 인내심과 정밀함을 담아 로스팅됩니다.",
+    "zh": "每一批咖啡都在我们的烘焙工坊中，以耐心与精准悉心烘焙。",
+    "ru": "Каждая партия обжаривается в нашем цехе с терпением и точностью.",
+    "th": "กาแฟทุกล็อตถูกคั่วด้วยความอดทนและความแม่นยำในโรงคั่วของเรา"
+  },
+  "Small-batch roasting allows us to bring out the natural character of every bean, creating coffee that feels balanced, clean, and memorable.": {
+    "ko": "소량 로스팅을 통해 원두 본연의 개성을 이끌어내어, 균형 잡히고 깔끔하며 기억에 남는 커피를 만듭니다.",
+    "zh": "小批量烘焙让我们能够充分展现每颗豆子的天然特质，成就均衡、干净且令人难忘的咖啡。",
+    "ru": "Обжарка небольшими партиями позволяет раскрыть природный характер каждого зерна, создавая кофе сбалансированный, чистый и запоминающийся.",
+    "th": "การคั่วทีละน้อยช่วยให้เราดึงเอกลักษณ์ตามธรรมชาติของเมล็ดกาแฟแต่ละเมล็ดออกมา สร้างสรรค์กาแฟที่สมดุล สะอาด และน่าจดจำ"
+  },
+  "Carefully Dialed Espresso": {
+    "ko": "세심하게 조율한 에스프레소",
+    "zh": "精心调校的意式浓缩",
+    "ru": "Тщательно настроенный эспрессо",
+    "th": "เอสเพรสโซที่ปรับแต่งอย่างพิถีพิถัน"
+  },
+  "Carefully dialed espresso, every day.": {
+    "ko": "매일, 세심하게 조율한 에스프레소.",
+    "zh": "每一天，都用心调校的意式浓缩。",
+    "ru": "Тщательно настроенный эспрессо, каждый день.",
+    "th": "เอสเพรสโซที่ปรับแต่งอย่างพิถีพิถันในทุก ๆ วัน"
+  },
+  "The Roastery": {
+    "ko": "로스터리",
+    "zh": "烘焙工坊",
+    "ru": "Обжарочный цех",
+    "th": "โรงคั่วกาแฟ"
+  },
+  "Visit Our Roastery": {
+    "ko": "로스터리 방문하기",
+    "zh": "参观我们的烘焙工坊",
+    "ru": "Посетите наш цех",
+    "th": "เยี่ยมชมโรงคั่วของเรา"
+  },
+  "Experience freshly roasted coffee,<br>right where every cup begins.": {
+    "ko": "모든 한 잔이 시작되는 이곳에서,<br>갓 로스팅한 커피를 경험해 보세요.",
+    "zh": "在每一杯咖啡开始的地方，<br>体验刚烘焙好的新鲜咖啡。",
+    "ru": "Ощутите свежеобжаренный кофе<br>там, где начинается каждая чашка.",
+    "th": "สัมผัสกาแฟคั่วสดใหม่<br>ณ จุดเริ่มต้นของทุกแก้ว"
+  },
+  "Rawai, Phuket": {
+    "ko": "라와이, 푸켓",
+    "zh": "拉威，普吉岛",
+    "ru": "Раваи, Пхукет",
+    "th": "ราไวย์ ภูเก็ต"
+  },
+  "Get Directions": {
+    "ko": "길 안내 받기",
+    "zh": "获取路线",
+    "ru": "Построить маршрут",
+    "th": "ดูเส้นทาง"
+  },
+  "Creating Everyday Moments": {
+    "ko": "일상의 순간을 만들어갑니다",
+    "zh": "创造日常美好时刻",
+    "ru": "Создавая повседневные моменты",
+    "th": "สร้างสรรค์ช่วงเวลาในทุกวัน"
+  },
+  "Every cup begins with care.<br>Every act of care creates a meaningful everyday moment.": {
+    "ko": "모든 잔은 정성에서 시작됩니다.<br>그 정성 하나하나가 의미 있는 일상의 순간을 만들어갑니다.",
+    "zh": "每一杯，都始于用心。<br>每一份用心，都成就有意义的日常时刻。",
+    "ru": "Каждая чашка начинается с заботы.<br>Каждый акт заботы создаёт значимый повседневный момент.",
+    "th": "ทุกแก้วเริ่มต้นจากความใส่ใจ<br>ทุกความใส่ใจสร้างช่วงเวลาที่มีความหมายในชีวิตประจำวัน"
+  },
+  "Specialty Coffee from Northern Thailand": {
+    "ko": "태국 북부의 스페셜티 커피",
+    "zh": "来自泰国北部的精品咖啡",
+    "ru": "Спешелти-кофе из Северного Таиланда",
+    "th": "สเปเชียลตี้คอฟฟี่จากภาคเหนือของไทย"
+  },
+  "General Inquiries": {
+    "ko": "일반 문의",
+    "zh": "一般咨询",
+    "ru": "Общие вопросы",
+    "th": "สอบถามทั่วไป"
+  },
+  "Wholesale &amp; Orders": {
+    "ko": "도매 및 주문",
+    "zh": "批发与订购",
+    "ru": "Опт и заказы",
+    "th": "ขายส่งและสั่งซื้อ"
+  },
+  "Available at": {
+    "ko": "만나볼 수 있는 곳",
+    "zh": "其他销售点",
+    "ru": "Также доступно в",
+    "th": "มีจำหน่ายที่"
+  },
+  "Chiang Mai International Airport": {
+    "ko": "치앙마이 국제공항",
+    "zh": "清迈国际机场",
+    "ru": "Международный аэропорт Чиангмай",
+    "th": "สนามบินนานาชาติเชียงใหม่"
+  },
+  "Creating everyday moments that make a difference.": {
+    "ko": "의미 있는 변화를 만드는 일상의 순간들.",
+    "zh": "创造有意义、带来改变的日常时刻。",
+    "ru": "Создаём повседневные моменты, которые имеют значение.",
+    "th": "สร้างสรรค์ช่วงเวลาในชีวิตประจำวันที่สร้างความเปลี่ยนแปลง"
+  },
+  "• We'll carefully review your order.": {
+    "ko": "• 주문 내역을 꼼꼼히 확인합니다.",
+    "zh": "• 我们会仔细核对您的订单。",
+    "ru": "• Мы внимательно проверим ваш заказ.",
+    "th": "• เราจะตรวจสอบคำสั่งซื้อของคุณอย่างละเอียด"
+  },
+  "• We'll confirm your order details and shipping cost.": {
+    "ko": "• 주문 상세 내역과 배송비를 확인해 안내드립니다.",
+    "zh": "• 我们会确认订单详情与运费。",
+    "ru": "• Мы подтвердим детали заказа и стоимость доставки.",
+    "th": "• เราจะยืนยันรายละเอียดคำสั่งซื้อและค่าจัดส่งให้คุณ"
+  },
+  "• We'll email your payment instructions.": {
+    "ko": "• 결제 안내를 이메일로 보내드립니다.",
+    "zh": "• 我们会通过邮件发送付款说明。",
+    "ru": "• Мы вышлем инструкции по оплате на почту.",
+    "th": "• เราจะส่งขั้นตอนการชำระเงินให้ทางอีเมล"
+  },
+  "• Once your payment is confirmed, we'll carefully prepare your order for shipment.": {
+    "ko": "• 결제가 확인되면, 주문하신 상품을 정성껏 준비해 배송해 드립니다.",
+    "zh": "• 付款确认后，我们将悉心为您准备订单并安排发货。",
+    "ru": "• После подтверждения оплаты мы бережно подготовим ваш заказ к отправке.",
+    "th": "• เมื่อยืนยันการชำระเงินแล้ว เราจะเตรียมคำสั่งซื้อของคุณอย่างพิถีพิถันเพื่อจัดส่ง"
+  },
+  "• We select coffee that meets our freshness standards, ensuring every order is shipped with exceptional quality.": {
+    "ko": "• 저희 신선도 기준을 충족하는 커피만을 선별하여, 모든 주문이 최상의 품질로 배송되도록 합니다.",
+    "zh": "• 我们只挑选符合新鲜度标准的咖啡，确保每一份订单都以卓越品质寄出。",
+    "ru": "• Мы отбираем кофе, соответствующий нашим стандартам свежести, чтобы каждый заказ отправлялся исключительно высокого качества.",
+    "th": "• เราคัดเลือกกาแฟที่ตรงตามมาตรฐานความสดใหม่ของเรา เพื่อให้มั่นใจว่าทุกคำสั่งซื้อจัดส่งด้วยคุณภาพที่ยอดเยี่ยม"
+  },
+  "• For larger orders, coffee may be freshly roasted before shipment.": {
+    "ko": "• 대량 주문의 경우, 배송 전 신선하게 로스팅해 드릴 수 있습니다.",
+    "zh": "• 大宗订单可能会在发货前新鲜烘焙。",
+    "ru": "• Для крупных заказов кофе может быть обжарен непосредственно перед отправкой.",
+    "th": "• สำหรับคำสั่งซื้อจำนวนมาก กาแฟอาจคั่วสดใหม่ก่อนจัดส่ง"
+  },
+  "• We typically ship coffee roasted within 7 days to ensure the best possible freshness.": {
+    "ko": "• 최상의 신선도를 위해 통상 로스팅 후 7일 이내의 커피를 배송해 드립니다.",
+    "zh": "• 为确保最佳新鲜度，我们通常寄出烘焙后7天以内的咖啡。",
+    "ru": "• Обычно мы отправляем кофе, обжаренный не более 7 дней назад, чтобы гарантировать наилучшую свежесть.",
+    "th": "• โดยทั่วไปเราจะจัดส่งกาแฟที่คั่วภายใน 7 วัน เพื่อความสดใหม่ที่ดีที่สุด"
+  },
+  "All Coffees": {
+    "ko": "전체 커피",
+    "zh": "全部咖啡",
+    "ru": "Все сорта",
+    "th": "กาแฟทั้งหมด"
+  },
+  "Rawai, Phuket, Thailand<br>Roastery &amp; Café": {
+    "ko": "태국 푸켓 라와이<br>로스터리 &amp; 카페",
+    "zh": "泰国普吉岛拉威<br>烘焙工坊 &amp; 咖啡馆",
+    "ru": "Раваи, Пхукет, Таиланд<br>Обжарочный цех и кафе",
+    "th": "ราไวย์ ภูเก็ต ประเทศไทย<br>โรงคั่วและคาเฟ่"
+  },
+  "Chiang Mai International Airport<br>Domestic Terminal – International Terminal": {
+    "ko": "치앙마이 국제공항<br>국내선 터미널 &ndash; 국제선 터미널",
+    "zh": "清迈国际机场<br>国内航站楼 &ndash; 国际航站楼",
+    "ru": "Международный аэропорт Чиангмай<br>Внутренний терминал &ndash; Международный терминал",
+    "th": "สนามบินนานาชาติเชียงใหม่<br>อาคารผู้โดยสารในประเทศ &ndash; อาคารผู้โดยสารระหว่างประเทศ"
+  },
+  "Naturally sweet and smooth with gentle floral notes.": {
+    "ko": "은은한 꽃향을 지닌 자연스러운 단맛의 부드러운 커피.",
+    "zh": "天然香甜顺滑，带有柔和的花香。",
+    "ru": "Натурально сладкий и мягкий, с нежными цветочными нотами.",
+    "th": "หวานธรรมชาตินุ่มนวล พร้อมกลิ่นดอกไม้อ่อน ๆ"
+  },
+  "Rich and full-bodied with deep sweetness and dark chocolate.": {
+    "ko": "짙은 단맛과 다크 초콜릿 향이 있는 진하고 묵직한 맛.",
+    "zh": "浓郁醇厚，甜感深邃，带有黑巧克力风味。",
+    "ru": "Насыщенный, плотный, с глубокой сладостью и тёмным шоколадом.",
+    "th": "เข้มข้นและเต็มรสชาติ พร้อมความหวานลึกและดาร์กช็อกโกแลต"
+  },
+  "Shipping cost": {
+    "ko": "배송비",
+    "zh": "运费",
+    "ru": "Стоимость доставки",
+    "th": "ค่าจัดส่ง"
+  },
+  "© 2026 YES Coffee. All rights reserved.": {
+    "ko": "© 2026 YES Coffee. 모든 권리 보유.",
+    "zh": "© 2026 YES Coffee. 保留所有权利。",
+    "ru": "© 2026 YES Coffee. Все права защищены.",
+    "th": "© 2026 YES Coffee – สงวนลิขสิทธิ์"
+  },
+  "© 2026 YES Coffee": {
+    "ko": "© 2026 YES Coffee",
+    "zh": "© 2026 YES Coffee",
+    "ru": "© 2026 YES Coffee",
+    "th": "© 2026 YES Coffee"
+  },
+  "Discover <span class=\"arr\">→</span>": {
+    "ko": "자세히 보기 <span class=\"arr\">&#8594;</span>",
+    "zh": "探索 <span class=\"arr\">&#8594;</span>",
+    "ru": "Подробнее <span class=\"arr\">&#8594;</span>",
+    "th": "ดูเพิ่มเติม <span class=\"arr\">&#8594;</span>"
+  },
+  "Learn More <span class=\"bs-arr\">→</span>": {
+    "ko": "자세히 보기 <span class=\"bs-arr\">&#8594;</span>",
+    "zh": "了解更多 <span class=\"bs-arr\">&#8594;</span>",
+    "ru": "Узнать больше <span class=\"bs-arr\">&#8594;</span>",
+    "th": "เรียนรู้เพิ่มเติม <span class=\"bs-arr\">&#8594;</span>"
+  },
+  "Learn More <span class=\"story-cta-arr\">→</span>": {
+    "ko": "자세히 보기 <span class=\"story-cta-arr\">→</span>",
+    "zh": "了解更多 <span class=\"story-cta-arr\">→</span>",
+    "ru": "Узнать больше <span class=\"story-cta-arr\">→</span>",
+    "th": "เรียนรู้เพิ่มเติม <span class=\"story-cta-arr\">→</span>"
+  },
+  "Google Maps <span class=\"story-cta-arr\">→</span>": {
+    "ko": "Google 지도 보기 <span class=\"story-cta-arr\">→</span>",
+    "zh": "Google 地图 <span class=\"story-cta-arr\">→</span>",
+    "ru": "Google Карты <span class=\"story-cta-arr\">→</span>",
+    "th": "Google Maps <span class=\"story-cta-arr\">→</span>"
+  },
+  "View the Collection <span class=\"story-cta-arr\">→</span>": {
+    "ko": "컬렉션 보기 <span class=\"story-cta-arr\">→</span>",
+    "zh": "浏览咖啡系列 <span class=\"story-cta-arr\">→</span>",
+    "ru": "Смотреть коллекцию <span class=\"story-cta-arr\">→</span>",
+    "th": "ดูคอลเลกชันกาแฟ <span class=\"story-cta-arr\">→</span>"
+  },
+  "Our Story <span class=\"story-cta-arr\">→</span>": {
+    "ko": "우리의 이야기 <span class=\"story-cta-arr\">→</span>",
+    "zh": "我们的故事 <span class=\"story-cta-arr\">→</span>",
+    "ru": "Наша история <span class=\"story-cta-arr\">→</span>",
+    "th": "เรื่องราวของเรา <span class=\"story-cta-arr\">→</span>"
+  },
+  "Discover <span class=\"rel-arr\">→</span>": {
+    "ko": "자세히 보기 <span class=\"rel-arr\">→</span>",
+    "zh": "探索 <span class=\"rel-arr\">→</span>",
+    "ru": "Подробнее <span class=\"rel-arr\">→</span>",
+    "th": "ดูเพิ่มเติม <span class=\"rel-arr\">→</span>"
+  },
+  "<span class=\"tagline-nowrap\">Coffee for everyday moments.</span><br>From Northern Thailand, with care.": {
+    "ko": "<span class=\"tagline-nowrap\">일상의 순간을 위한 커피.</span><br>태국 북부에서, 정성을 담아.",
+    "zh": "<span class=\"tagline-nowrap\">为日常时刻而生的咖啡。</span><br>来自泰国北部，用心呈现。",
+    "ru": "<span class=\"tagline-nowrap\">Кофе для повседневных моментов.</span><br>Из Северного Таиланда — с заботой.",
+    "th": "<span class=\"tagline-nowrap\">กาแฟเพื่อทุกช่วงเวลาในชีวิตประจำวัน</span><br>จากภาคเหนือของไทย ด้วยความใส่ใจ"
+  },
+  "<span class=\"tagline-nowrap\">Specialty coffee from Northern Thailand.</span><br>Roasted in Thailand.": {
+    "ko": "<span class=\"tagline-nowrap\">태국 북부의 스페셜티 커피.</span><br>태국에서 로스팅했습니다.",
+    "zh": "<span class=\"tagline-nowrap\">来自泰国北部的精品咖啡。</span><br>在泰国烘焙。",
+    "ru": "<span class=\"tagline-nowrap\">Спешелти-кофе из Северного Таиланда.</span><br>Обжарено в Таиланде.",
+    "th": "<span class=\"tagline-nowrap\">สเปเชียลตี้คอฟฟี่จากภาคเหนือของไทย</span><br>คั่วในประเทศไทย"
+  },
+  "<span class=\"tagline-nowrap\">Specialty coffee from Northern Thailand.</span><br>Thoughtfully roasted in Thailand.": {
+    "ko": "<span class=\"tagline-nowrap\">태국 북부의 스페셜티 커피.</span><br>태국에서 정성껏 로스팅했습니다.",
+    "zh": "<span class=\"tagline-nowrap\">来自泰国北部的精品咖啡。</span><br>在泰国用心烘焙。",
+    "ru": "<span class=\"tagline-nowrap\">Спешелти-кофе из Северного Таиланда.</span><br>Бережно обжарено в Таиланде.",
+    "th": "<span class=\"tagline-nowrap\">สเปเชียลตี้คอฟฟี่จากภาคเหนือของไทย</span><br>คั่วอย่างพิถีพิถันในประเทศไทย"
+  },
+  "If you have questions about this Privacy Policy or how your information is handled, please reach us at <a href=\"mailto:contact@thailandyescoffee.com\" style=\"color:var(--ink);\">contact@thailandyescoffee.com</a> for general inquiries, or <a href=\"mailto:order@thailandyescoffee.com\" style=\"color:var(--ink);\">order@thailandyescoffee.com</a> for order-related questions.": {
+    "ko": "본 개인정보처리방침이나 정보 처리 방식에 대해 궁금한 점이 있으시면 일반 문의는 <a href=\"mailto:contact@thailandyescoffee.com\" style=\"color:var(--ink);\">contact@thailandyescoffee.com</a>, 주문 관련 문의는 <a href=\"mailto:order@thailandyescoffee.com\" style=\"color:var(--ink);\">order@thailandyescoffee.com</a>로 연락해 주세요.",
+    "zh": "如果您对本隐私政策或您的信息处理方式有任何疑问，一般咨询请联系 <a href=\"mailto:contact@thailandyescoffee.com\" style=\"color:var(--ink);\">contact@thailandyescoffee.com</a>，订单相关问题请联系 <a href=\"mailto:order@thailandyescoffee.com\" style=\"color:var(--ink);\">order@thailandyescoffee.com</a>。",
+    "ru": "Если у вас есть вопросы об этой Политике конфиденциальности или об обработке вашей информации, свяжитесь с нами по общим вопросам: <a href=\"mailto:contact@thailandyescoffee.com\" style=\"color:var(--ink);\">contact@thailandyescoffee.com</a>, по вопросам заказа: <a href=\"mailto:order@thailandyescoffee.com\" style=\"color:var(--ink);\">order@thailandyescoffee.com</a>.",
+    "th": "หากคุณมีคำถามเกี่ยวกับนโยบายความเป็นส่วนตัวนี้หรือวิธีการจัดการข้อมูลของคุณ กรุณาติดต่อเราที่ <a href=\"mailto:contact@thailandyescoffee.com\" style=\"color:var(--ink);\">contact@thailandyescoffee.com</a> สำหรับข้อสอบถามทั่วไป หรือ <a href=\"mailto:order@thailandyescoffee.com\" style=\"color:var(--ink);\">order@thailandyescoffee.com</a> สำหรับคำถามเกี่ยวกับการสั่งซื้อ"
+  },
+  "If you have questions about these Terms of Service, please reach us at <a href=\"mailto:contact@thailandyescoffee.com\" style=\"color:var(--ink);\">contact@thailandyescoffee.com</a> for general inquiries, or <a href=\"mailto:order@thailandyescoffee.com\" style=\"color:var(--ink);\">order@thailandyescoffee.com</a> for order-related questions.": {
+    "ko": "본 이용약관에 대해 궁금한 점이 있으시면 일반 문의는 <a href=\"mailto:contact@thailandyescoffee.com\" style=\"color:var(--ink);\">contact@thailandyescoffee.com</a>, 주문 관련 문의는 <a href=\"mailto:order@thailandyescoffee.com\" style=\"color:var(--ink);\">order@thailandyescoffee.com</a>로 연락해 주세요.",
+    "zh": "如果您对本服务条款有任何疑问，一般咨询请联系 <a href=\"mailto:contact@thailandyescoffee.com\" style=\"color:var(--ink);\">contact@thailandyescoffee.com</a>，订单相关问题请联系 <a href=\"mailto:order@thailandyescoffee.com\" style=\"color:var(--ink);\">order@thailandyescoffee.com</a>。",
+    "ru": "Если у вас есть вопросы об этих Условиях использования, свяжитесь с нами по общим вопросам: <a href=\"mailto:contact@thailandyescoffee.com\" style=\"color:var(--ink);\">contact@thailandyescoffee.com</a>, по вопросам заказа: <a href=\"mailto:order@thailandyescoffee.com\" style=\"color:var(--ink);\">order@thailandyescoffee.com</a>.",
+    "th": "หากคุณมีคำถามเกี่ยวกับข้อกำหนดการใช้งานนี้ กรุณาติดต่อเราที่ <a href=\"mailto:contact@thailandyescoffee.com\" style=\"color:var(--ink);\">contact@thailandyescoffee.com</a> สำหรับข้อสอบถามทั่วไป หรือ <a href=\"mailto:order@thailandyescoffee.com\" style=\"color:var(--ink);\">order@thailandyescoffee.com</a> สำหรับคำถามเกี่ยวกับการสั่งซื้อ"
+  },
+  "Company Information": {
+    "ko": "회사 정보",
+    "zh": "公司信息",
+    "ru": "Информация о компании",
+    "th": "ข้อมูลบริษัท"
+  },
+  "Retail & Café Operations": {
+    "ko": "커피 판매 및 카페 운영",
+    "zh": "咖啡零售与门店运营",
+    "ru": "Розничная торговля и работа кафе",
+    "th": "จำหน่ายกาแฟและดำเนินการร้านคาเฟ่"
+  },
+  "Business Registration No.": {
+    "ko": "사업자등록번호",
+    "zh": "商业登记证号",
+    "ru": "Регистрационный номер компании",
+    "th": "เลขทะเบียนนิติบุคคล"
+  },
+  "Coffee Roasted by": {
+    "ko": "커피 로스팅",
+    "zh": "咖啡烘焙",
+    "ru": "Обжарка кофе",
+    "th": "คั่วกาแฟโดย"
+  },
+  "Roasting & Coffee Production": {
+    "ko": "커피 로스팅 및 생산",
+    "zh": "咖啡烘焙与生产",
+    "ru": "Обжарка и производство кофе",
+    "th": "การคั่วและผลิตกาแฟ"
+  }
+};
+
+var YC_LANG_NAMES = {en:'English', ko:'한국어', zh:'中文', ru:'Русский', th:'ไทย'};
+
+function ycTranslateText(el, lang) {
+  var orig = el.getAttribute('data-yc-orig');
+  if (orig === null) {
+    orig = el.textContent.replace(/\s+/g, ' ').trim();
+    el.setAttribute('data-yc-orig', orig);
+  }
+  if (lang === 'en') { el.textContent = orig; return; }
+  var entry = YC_I18N[orig];
+  el.textContent = (entry && entry[lang]) ? entry[lang] : orig;
+}
+
+function ycTranslateHTML(el, lang, dictKey) {
+  var orig = el.getAttribute('data-yc-orig-html');
+  if (orig === null) {
+    orig = el.innerHTML.replace(/\s+/g, ' ').trim();
+    el.setAttribute('data-yc-orig-html', orig);
+  }
+  if (lang === 'en') { el.innerHTML = orig; return; }
+  var key = dictKey || orig;
+  var entry = YC_I18N[key];
+  el.innerHTML = (entry && entry[lang]) ? entry[lang] : orig;
+}
+
+function ycTranslateSmart(el, lang) {
+  if (el.querySelector('a')) return;
+  var html = el.getAttribute('data-yc-orig-html') !== null ? el.getAttribute('data-yc-orig-html') : el.innerHTML;
+  var hasStructure = html.indexOf('<br') !== -1 || html.indexOf('<em') !== -1 || html.indexOf('<span') !== -1;
+  if (hasStructure) {
+    ycTranslateHTML(el, lang, null);
+  } else {
+    ycTranslateText(el, lang);
+  }
+}
+
+var YC_TEXT_SELECTORS = [
+  '.nav-links a', '.site-ui-drawer-links a', '.site-ui-drawer-lang-label', '.nav-back',
+  '.hero-cta',
+  'label', '.modal-title', '.modal-subtitle', '.modal-section-title',
+  '.size-label', '.info-label', '.info-box-title', '.info-box-text', '.add-item-label',
+  '.total-row-label', '.price-label',
+  '.modal-success-title', '.modal-success-text', '.modal-success-list li',
+  '.order-shipping-text',
+  'button.btn-primary.modal-submit', '.add-item-submit', '.btn-primary',
+  '.col-eyebrow', '.col-title', '.col-intro', '.col-name', '.col-desc', '.discover', '.view-all',
+  '.bs-eyebrow', '.bs-headline', '.bs-sub', '.bs-body', '.bs-cta',
+  '.story-label', '.story-headline', '.story-body', '.story-cta',
+  '.section-eyebrow', '.section-title',
+  '.brew-method', '.brew-stat-label', '.brew-tip',
+  '.taste-name', '.taste-desc', '.glance-label',
+  '.footer-heading', '.footer-text', '.footer-tagline',
+  '.footer-legal p', '.footer-legal-links a',
+  '.product-eyebrow', '.product-desc',
+  '.rel-name', '.rel-sub', '.rel-link',
+  '.eyebrow', '.lede', '.address', '.copy', '.cta-note', '.price-note',
+  '.page-header h1', '.page-header p', '.find-us h2', '.dream-canvas h2',
+  '.story-block h2', '.story-block p', '.experience h2', '.experience p',
+  '.section-inner > p', '.section-inner > h1',
+  '.company-info-i18n'
+];
+
+function applyYcLanguage(lang) {
+  YC_TEXT_SELECTORS.forEach(function (sel) {
+    document.querySelectorAll(sel).forEach(function (el) {
+      ycTranslateSmart(el, lang);
+    });
+  });
+
+  // Contact paragraphs (Privacy/Terms) contain mailto links; translate the
+  // surrounding text via their own full innerHTML while preserving the
+  // <a> tags exactly, bypassing the generic link-skip safety rule.
+  document.querySelectorAll('.section-inner > p').forEach(function (el) {
+    if (el.querySelector('a')) {
+      ycTranslateHTML(el, lang, null);
+    }
+  });
+
+  var heroEyebrow = document.querySelector('.hero-eyebrow');
+  if (heroEyebrow) ycTranslateHTML(heroEyebrow, lang, 'From Northern Thailand &bull; With Care');
+  var heroHeadline = document.querySelector('.hero-headline');
+  if (heroHeadline && heroHeadline.closest('.hero') && document.querySelector('.hero-cta')) {
+    ycTranslateHTML(heroHeadline, lang, '__hero_headline_html__');
+  } else if (heroHeadline) {
+    ycTranslateSmart(heroHeadline, lang);
+  }
+  var heroBody = document.querySelector('.hero-body');
+  if (heroBody && document.querySelector('.hero-cta')) {
+    ycTranslateHTML(heroBody, lang, '__hero_body_html__');
+  } else if (heroBody) {
+    ycTranslateSmart(heroBody, lang);
+  }
+  var heroCta = document.querySelector('.hero-cta');
+  if (heroCta) ycTranslateHTML(heroCta, lang, 'Discover Coffees &#8594;');
+
+  document.querySelectorAll('.site-ui-lang-btn').forEach(function (b) {
+    b.classList.toggle('active', b.getAttribute('data-lang') === lang.toUpperCase());
+  });
+
+  document.documentElement.lang = lang;
+  try { localStorage.setItem('yc_lang', lang); } catch (e) {}
+  window.ycCurrentLang = lang;
+}
+
+function ycGetOrderAlertText() {
+  var lang = window.ycCurrentLang || 'en';
+  var prefixEntry = YC_I18N['__error_prefix__'];
+  var suffixEntry = YC_I18N['__error_suffix__'];
+  if (lang === 'en' || !prefixEntry) {
+    return 'Something went wrong sending your order. Please try again, or email us directly at contact@thailandyescoffee.com.';
+  }
+  var prefix = prefixEntry[lang] || 'Something went wrong sending your order. Please try again, or email us directly at ';
+  var suffix = (suffixEntry && suffixEntry[lang] !== undefined) ? suffixEntry[lang] : '.';
+  return prefix + 'contact@thailandyescoffee.com' + suffix;
+}
+
+document.querySelectorAll('.site-ui-lang-btn').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var langMap = {EN:'en', KO:'ko', ZH:'zh', RU:'ru', TH:'th'};
+    var lang = langMap[btn.getAttribute('data-lang')] || 'en';
+    applyYcLanguage(lang);
+  }, true);
+});
+
+(function ycInitLanguage() {
+  var saved = 'en';
+  try { saved = localStorage.getItem('yc_lang') || 'en'; } catch (e) {}
+  applyYcLanguage(saved);
+})();
+</script>
 </body>
 </html>
